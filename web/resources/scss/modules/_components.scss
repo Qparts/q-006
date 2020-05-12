@@ -1,0 +1,146 @@
+.p-relative{
+  position: relative;
+}
+.swiper-pagination-bullets{
+  bottom: -20px !important;
+}
+.swiper-pagination-bullet{
+  height: 3px;
+  border-radius: 0;
+  width: 10px;
+  @include transition(all, 0.5s, ease);
+}
+.swiper-pagination-bullet-active{
+  background: $brand-color;
+  width: 35px;
+}
+@font-face {
+  font-family: "qvm-icon";
+  src:url("/resources/icon/qvm-icon.eot");
+  src:url("/resources/icon/qvm-icon.eot?#iefix") format("embedded-opentype"),
+  url("/resources/icon/qvm-icon.woff") format("woff"),
+  url("/resources/icon/qvm-icon.ttf") format("truetype"),
+  url("/resources/icon/qvm-icon.svg#qvm-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before{
+  font-family: "qvm-icon" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-list-icon:before,
+.register li:before{
+  content: "\e04f";
+}
+.icon-next-icon:before {
+  content: "\e050";
+}
+//form
+.form-row{
+  padding-bottom: 15px;
+  @include bp-down-md{
+    padding-bottom: 10px;
+    .form-group{
+      margin-bottom: 10px;
+    }
+  }
+  > label{
+    @include font-size(17px);
+    margin-bottom: 5px;
+    display: block;
+    > a{
+      color: $dark-brand-color;
+      font-weight: 500;
+      float: #{$right};
+    }
+  }
+  .form-control{
+    margin: 0;
+    height: 60px;
+    border-color: #CACDD3;
+    border-radius: 10px;
+    margin-bottom: 0;
+    @include font-size(20px);
+    font-weight: 500;
+    color: #000000;
+    box-shadow: inset 0 0 0 $white;
+    max-width: 100%;
+    @include bp-down-md{
+      height: 50px;
+    }
+    &:focus{
+      @include box-shadow(0, 0, 8px, rgba(242, 5, 5, 0.6));
+      border-color: $brand-color;
+    }
+  }
+  .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+    background: $white;
+  }
+  @include bp-medium{
+    [class*="col-"] + [class*="col-"]{
+      padding-#{$right}: 0;
+    }
+    [class*="col-"]:first-child{
+      padding-#{$right}: 0;
+    }
+    [class*="col-"]:last-child{
+      padding-#{$right}: 15px;
+    }
+  }
+  @include bp-down-md{
+    [class*="col-xs-"] + [class*="col-xs-"]{
+      padding-#{$left}: 0;
+    }
+  }
+
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  background-color: $white !important;
+}
+select.form-control{
+  @include if-rtl{
+    background-position: left center;
+  }
+}
+.inner-heading{
+  h3{
+    @include d-flex-end-center();
+    line-height: 1;
+    @include font-size(35px);
+    flex-wrap: wrap;
+    color: #14455B;
+    margin-bottom: 13px;
+    margin-top: 0;
+  }
+  img{
+    max-width: 100px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  p{
+    text-align: center;
+    @include font-size(21px);
+    color: $gray-50;
+    font-weight: 500;
+    margin-top: 0;
+  }
+  @include bp-xs-small{
+    img,p{
+      display: none;
+    }
+    h3{
+      @include font-size(20px);
+    }
+  }
+}

@@ -1,0 +1,223 @@
+.cd-auto-hide-header{
+  background: $white;
+  @include box-shadow(0, 0, 40px, rgba(22, 75, 99, 0.16));
+  padding: 10px 0;
+  .row{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .col{
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .col-auto{
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    #{$left}: 0;
+    @include transition(all , 0.5s,ease-out);
+    img{
+      width: 100px;
+    }
+  }
+  nav{
+    @include transition(all ,1s,ease-out);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    ul{
+      margin-bottom: 0;
+      li{
+        a{
+          font-weight: 700;
+          padding: 10px 20px;
+          @include font-size(17px);
+          display: flex;
+          align-items: center;
+          color: $dark-brand-color;
+          border-radius: 20px;
+          &:hover{
+            color: $dark-brand-color-60;
+          }
+          &.active{
+            color: $brand-color;
+            background: darken($body-bg, 2%);
+            @include opacity(1);
+          }
+        }
+        &.btn{
+          padding: 0;
+          a{
+
+            padding: 13px 25px;
+            border-radius: 30px;
+            @include btn-gradient();
+            color: $white;
+            &:hover{
+              background: $brand-color !important;
+              color: $white !important;
+            }
+          }
+        }
+        &.hidden-sm-nav{
+          @include nav-small{
+            display: none;
+          }
+        }
+        &.visible-sm-nav{
+          display: none;
+          @include nav-small{
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-bottom: 20px;
+            .btn{
+              display: inline-flex;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav-trigger{
+    #{$right}: 0;
+    color: $dark-brand-color-80;
+    em{
+      background-color: $dark-brand-color-80;
+      &:before,
+      &:after{
+        background-color: $dark-brand-color-80;
+      }
+    }
+  }
+  &.nav-open{
+
+    .nav-trigger{
+      em{
+        background-color: rgba(255, 255, 255, 0) !important;
+      }
+    }
+    @include nav-small{
+      background: $white;
+      nav{
+        ul{
+          @include nav-small{
+            background: $white;
+            height: calc(100vh - 62px);
+          }
+        }
+      }
+      .col-auto{
+        width: 100%;
+        .brand{
+          #{$left}: 50%;
+        }
+        img{
+          margin-#{$left}: -50px;
+        }
+      }
+      .cd-primary-nav{
+        ul{
+          list-style: none;
+          padding: 0;
+          text-align: center;
+          padding-top: 40px;
+          a{
+            color: $dark-brand-color;
+            @include font-size(22px);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+  &.overlay-nav{
+    background: transparent;
+    box-shadow: none;
+    @include nav-lg{
+      @include transition(all ,1s,ease-out);
+    }
+    &.dark-nav{
+      background: $dark-brand-color;
+    }
+    &.nav-open{
+      @include nav-small{
+        background: $dark-brand-color;
+        background: $dark-brand-color;
+        nav{
+          ul{
+            @include nav-small{
+              background: $dark-brand-color;
+            }
+          }
+        }
+        .cd-primary-nav{
+          ul{
+            a{
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    .nav-trigger{
+      color: $white;
+      em{
+        background-color: $white;
+        &:before,
+        &:after{
+          background-color: $white;
+        }
+      }
+    }
+    nav{
+      ul{
+        > li{
+          > a{
+            color: $white;
+            &:hover{
+              color: $light-gray;
+            }
+            &.active{
+              background: rgba(0, 0, 0, 0.3);
+            }
+          }
+          img{
+            margin-#{$right}: 3px;
+          }
+          &.btn{
+            a{
+              @include transition(all, 0.5s, ease-out);
+              background: $white;
+              color: $brand-color;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.overflow-hidden{
+  @include nav-small{
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,22 @@
+.main-footer{
+  background: $dark-brand-color-80;
+  padding: 15px 0;
+  .row{
+    @include bp-medium{
+      display: flex;
+      align-items: center;
+    }
+  }
+  p{
+    color: $white;
+    margin-bottom: 0;
+    @include font-size(18px);
+    span{
+      @include opacity(0.5)
+    }
+  }
+  img{
+    float: #{$right};
+    width: 100px;
+  }
+}

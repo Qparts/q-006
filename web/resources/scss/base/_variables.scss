@@ -1,0 +1,43 @@
+/*FONT*/
+
+$font-path:       "../fonts";
+
+$font-bold-name:          "font-bold";
+$font-light-name:         "font-light";
+$font-reg-name:           "font-reg";
+$font-med-name:           "font-med";
+
+//$font-reg:  if-ltr(Arial, $else: tahoma);
+$font-reg:   "font-reg", Helvetica, Arial, sans-serif;
+$font-bold:  "font-bold", Helvetica, Arial, sans-serif;
+$font-light: "font-light", Helvetica, Arial, sans-serif;
+$font-med: "font-med", Helvetica, Arial, sans-serif;
+
+
+//COLOR
+$brand-color      :#F20505;
+$brand-color-dark :#DA1B21;
+$dark-brand-color:#082C3C;
+$dark-brand-color-80: #14455B;
+$dark-brand-color-60: #164B63;
+$bas-gray         :#343535;
+$light-gray:#E4E4E4;
+$bas-gray-60:#8B8B8B;
+$body-bg          :#FCFCFC;
+$white            :#fff;
+$gray-50: #707070;
+
+//img
+$img-path: "../img";
+
+//border-radius-base
+$border-radius-base: 0;
+
+//BAS FONT SIZE
+$bas-font-size: 16px;
+
+//container width
+$max-container : 1300px;
+
+//sec + sec
+$sec-t-p: 100px;

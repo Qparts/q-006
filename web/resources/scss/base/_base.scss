@@ -1,0 +1,32 @@
+/*container max width*/
+
+.container-fluid{
+  max-width: $max-container;
+}
+a:focus,
+a:hover,
+a:active{
+  text-decoration: none;
+  outline: 0;
+}
+img{
+  max-width: 100%;
+}
+
+body{
+  @include if-rtl{
+    font-family: Tajawal;
+  };
+}
+html{
+  font-size: 14px;
+}
+.gray-body{
+  background: $body-bg;
+}
+.inner-main{
+  padding-top: 140px;
+  @include bp-xs-small{
+    padding-top: 110px;
+  }
+}

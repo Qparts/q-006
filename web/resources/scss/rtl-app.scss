@@ -1,0 +1,34 @@
+/*Direction */
+// Override default value for $dir in directional.scss
+$dir: rtl;
+
+// Import helpers from directional.scss
+@import "base/_directional.scss";
+
+/* BASE - Base styles , variables, mixins, ect*/
+@import 'base/_variables.scss';
+@import 'base/_mixins.scss';
+@import 'base/_normalize.scss';
+@import 'base/_base.scss';
+
+
+
+/*MODULES  - Individual site components */
+@import 'modules/_typography.scss';
+@import 'modules/_blocks.scss';
+@import 'modules/_buttons.scss';
+@import 'modules/_sections.scss';
+@import 'modules/_components.scss';
+
+
+
+/* LAYOUTS - page layout styles */
+@import 'layouts/_nav.scss';
+@import 'layouts/_header.scss';
+@import 'layouts/_footer.scss';
+
+/* STATE - page of site*/
+@import "state/_home.scss";
+@import "state/_register.scss";
+@import "state/_price.scss";
+@import "state/_contact.scss";

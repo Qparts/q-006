@@ -1,0 +1,24 @@
+@include if-rtl{
+  @import url('https://fonts.googleapis.com/css?family=Tajawal:300,400,500,700,800&display=swap&subset=arabic');
+};
+h1,h2,h3{
+  font-weight: 700;
+}
+h1{
+  @include font-size(48px);
+  @include bp-xs-small{
+    @include font-size(35px);
+  }
+}
+h2{
+  @include font-size(45px);
+  @include bp-xs-small{
+    @include font-size(30px);
+  }
+}
+h3{
+  @include font-size(38px);
+  @include bp-xs-small{
+    @include font-size(25px);
+  }
+}

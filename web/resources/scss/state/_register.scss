@@ -1,0 +1,277 @@
+.register{
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  min-height: 100%;
+  position: relative;
+  > aside{
+    @include bp-large{
+      width: 460px;
+    }
+    @include bp-medium{
+      width: 412px;
+
+    }
+    background-image: url(/resources/images/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    border-bottom-#{$right}-radius: 300px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    height: auto;
+    min-height: 750px;
+    figure{
+      width: 102px;
+    }
+    p{
+      @include font-size(18px);
+      margin-bottom: 30px;
+      margin-top: 15px;
+    }
+    ul{
+      li{
+        @include font-size(20px);
+        font-weight: 700;
+        margin-bottom: 15px;
+        &:before{
+          font-family: "qvm-icon";
+          color: $brand-color;
+          @include font-size(23px);
+          margin-#{$right}: 10px;
+          position: relative;
+          top: 5px;
+        }
+      }
+    }
+    .btn-primary{
+      width: 230px;
+      min-height: 60px;
+      @include d-flex-center-center();
+      @include font-size(20px);
+      margin-top: 25px;
+    }
+  }
+}
+.register{
+  .container-fluid{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include bp-medium{
+      margin-left: 0;
+      margin-right: 0;
+      margin: 0;
+      padding-top: 90px;
+      padding-bottom: 90px;
+      > .row{
+        position: absolute;
+        top: 0;
+        left: 15px;
+      }
+    }
+    @include bp-down-md{
+      padding: 0 30px 85px;
+    }
+  }
+  .have-account{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    .btn{
+      margin-#{$left}: 10px;
+    }
+    p{
+      font-weight: 700;
+      @include font-size(19px);
+      color: $dark-brand-color-80;
+      margin-bottom: 0;
+    }
+  }
+}
+.account-form{
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  @include bp-medium{
+    max-width: 700px;
+  }
+  > h1{
+    @include font-size(30px);
+    color: $dark-brand-color-80;
+    margin-bottom: 20px;
+    display: flex;
+    @include bp-medium{
+      align-items: flex-end;
+    }
+    @include bp-down-md{
+      flex-direction: column;
+    }
+    img{
+      max-width: 100px;
+      margin-#{$left}: 10px;
+    }
+    p{
+      display: none;
+    }
+    @include bp-down-md{
+      @include font-size(23px);
+      p{
+        margin-top: 10px;
+        display: block;
+        @include font-size(17px);
+        a{
+          font-weight: 700;
+          padding: 0;
+          @include font-size(17px);
+          box-shadow: none !important;
+          &:hover{
+            color: $brand-color;
+          }
+
+        }
+      }
+    }
+  }
+  .btn-primary{
+    margin: 0;
+    width: 100%;
+    @include font-size(20px);
+    min-height: 60px;
+    @include btn-gradient();
+    transition: none;
+    margin-top: 10px;
+    &:hover{
+      background: $brand-color-dark;
+      color: $white;
+    }
+  }
+  form{
+    position: relative;
+  }
+  fieldset{
+    /*stacking fieldsets above each other*/
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    &:not(:first-of-type){
+      display: none;
+    }
+  }
+  .code-offer{
+    color: $brand-color;
+    @include font-size(17px);
+    font-weight: 500;
+    label{
+      display: block;
+      font-weight: 700;
+      @include font-size(20px);
+      color: $dark-brand-color;
+
+    }
+  }
+  .terms-accept{
+    @include font-size(19px);
+    color: $bas-gray-60;
+    font-weight: 700;
+    margin-bottom: 30px;
+    a{
+      color: $dark-brand-color;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+
+  }
+  .steps{
+    width: 10px;
+    height: 2px;
+    background: $light-gray;
+    border-width: 0;
+    padding: 0;
+    cursor: default;
+    padding: 0 2px;
+    @include transition();
+    margin: 0 2px 0;
+    position: relative;
+    top: -10px;
+    &.active{
+      background: $brand-color;
+      width: 35px;
+    }
+    &.previous{
+      cursor: pointer;
+      height: 3px;
+    }
+  }
+  .input-parent{
+    text-align: #{$left};
+  }
+
+}
+.register-header{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  img{
+    max-width: 90px;
+    margin-bottom: 10px;
+  }
+}
+.signin-form{
+  margin: auto;
+  .account-form{
+    h1{
+      margin-bottom: 40px;
+    }
+  }
+  form{
+    text-align: center;
+    .form-row{
+      text-align: #{$left};
+      padding-bottom: 25px;
+    }
+    .form-group{
+      margin-bottom: 25px;
+    }
+    .btn-primary{
+      margin-top: 0;
+      @include bp-medium{
+        min-width: 200px;
+        width: auto;
+      }
+    }
+  }
+}
+.confirm-m{
+  text-align: center;
+  @include bp-medium{
+    margin-top: 100px;
+  }
+  h3{
+    @include font-size(30px);
+  }
+  p{
+    font-weight: 700;
+    line-height: 2;
+  }
+  .btn{
+    @include font-size(20px);
+    min-height: 60px;
+    padding: 15px 30px;
+  }
+  @include bp-xs-small{
+    p{
+      display: block;
+    }
+    br{
+      display: none;
+    }
+  }
+}

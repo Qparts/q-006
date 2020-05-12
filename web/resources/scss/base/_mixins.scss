@@ -1,0 +1,144 @@
+
+/*UNCTIONS*/
+
+@function calculateRem($size) {
+  $remSize: $size / 14px;
+  @return $remSize * 1rem;
+}
+
+
+/*MIXIN*/
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin bg-img-responsive($img-size) {
+  -webkit-background-size: $img-size;
+  -moz-background-size: $img-size;
+  -o-background-size: $img-size;
+  background-size: $img-size;
+}
+@mixin bg-color-alpha($red, $green, $blue, $alpha) {
+  background-color: rgba($red, $green, $blue, $alpha);
+}
+@mixin text-color-alpha($red, $green, $blue, $alpha) {
+color: rgba($red, $green, $blue, $alpha);
+}
+
+//box shadow
+@mixin box-shadow($top, $left, $blur, $color) {
+      -webkit-box-shadow:$top $left $blur $color ;
+      -moz-box-shadow:$top $left $blur $color;
+      box-shadow:$top $left $blur $color ;
+}
+@mixin innerbox-shadow($top, $left, $blur, $color) {
+  -webkit-box-shadow:inset $top $left $blur $color;
+  -moz-box-shadow:inset $top $left $blur $color;
+  box-shadow:inset $top $left $blur $color;
+}
+@mixin text-shadow($top, $left, $blur, $color) {
+  text-shadow: $top, $left, $blur, $color;
+}
+// Opacity
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+//font-family
+@mixin defult-thin($font: $font-family-base-thin){
+  font-family: $font;
+}
+
+// @media
+@mixin nav-lg {
+  @media (min-width: 1170px) {
+      @content;
+    }
+}
+@mixin nav-sm {
+  @media (max-width: 1170px) {
+      @content;
+    }
+}
+@mixin bp-large {
+@media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin bp-down-md{
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin bp-small {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin bp-xs-small{
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin bp-xxs-small{
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin nav-small{
+  @media only screen and (max-width: 1024px){
+    @content;
+  }
+}
+@mixin nav-lg{
+  @media only screen and (min-width: 1024px){
+    @content;
+  }
+}
+//animate
+@mixin animat-delay($delay){
+  -webkit-animation-delay: $delay; /* Chrome, Safari, Opera */
+    animation-delay: $delay;
+}
+//d-flex
+@mixin d-flex{
+  display: flex;
+}
+@mixin d-flex-end-center {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+@mixin d-flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// @include transition(all,2s,ease-out);
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition:    $what $time $how;
+  -ms-transition:     $what $time $how;
+  -o-transition:      $what $time $how;
+  transition:         $what $time $how;
+}
+
+//btn-gradient
+@mixin btn-gradient{
+  background: linear-gradient(90deg, $brand-color 10%, $brand-color-dark 100%);
+  transition: none;
+}

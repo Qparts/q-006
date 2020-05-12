@@ -129,7 +129,7 @@ function showDivAndHideOthers(elem) {
 }
 
 
-function parseArabic(event, val) {
+function parseArabic(val) {
 	str = val.value;
 	var num = changeArabic(str);
 	var mobile = document.getElementById(val.id);

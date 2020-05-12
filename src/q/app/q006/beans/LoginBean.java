@@ -4,6 +4,7 @@ import q.app.q006.helpers.AppConstants;
 import q.app.q006.helpers.Bundler;
 import q.app.q006.helpers.Helper;
 import q.app.q006.model.customer.LoginObject;
+import q.app.q006.reqs.Requester;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
@@ -76,6 +77,7 @@ public class LoginBean implements Serializable {
     public void updateLogin(LoginObject loginObject) {
         this.loginObject = loginObject;
         doLogin();
+        Helper.redirect("/");
     }
 
     public void doLogin() {

@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:panelGroup rendered="#{createQuotationBean.step eq 4}">
+		<div class="row setup-content step" >
+			<div class="col-xs-12">
+				<div class="col-md-12 well text-center">
+					<p class="title-price">#{lex.enterVin}</p>
+					<div id="toolTipWhyVin" class="whyvin-image">
+						<h:graphicImage name="images/why-vin.png"
+										styleClass="whyvin-image" />
+					</div>
+					<h:outputLink id="whyvin" value="#">
+						<h:outputText value="#{lex.whyVin}" />
+					</h:outputLink>
+					<br />
+					<div>
+						<h:panelGroup id="vin-panel">
+							<h:outputLink id="content" value="#" rendered="true">
+								<i class="fa fa-question-circle" style="font-size: 15px;"/>
+							</h:outputLink>
+							<b:inputText id="vin" value="#{createQuotationBean.vin}"
+										 required="true" requiredMessage="#{lex.enterVinReq}"
+										 validatorMessage="#{lex.invalidVin2}"
+										 maxlength="17" placeholder="#{lex.vin}"
+										 styleClass="form-control"
+										 style="width:230px;text-transform: uppercase;margin: auto;">
+								<f:validateRegex pattern="^[a-zA-Z0-9]*$"/>
+							</b:inputText>
+						</h:panelGroup>
+					</div>
+					<b:message for="vin" id="vin-msg" style="height:10px;" />
+					<br />
+					<b:commandButton look="primary" actionListener="#{createQuotationBean.resetToStep(2)}"
+									 value="#{lex.previous}" update=":form-1" process="@this" />
+
+					<b:commandButton look="primary" actionListener="#{createQuotationBean.verifyVin()}"
+									 value="#{lex.next}" update="vin vin-msg :form-1" />
+				</div>
+			</div>
+		</div>
+	</h:panelGroup>
+</ui:composition>

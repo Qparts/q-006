@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:o="http://omnifaces.org/ui">
+
+<h:head>
+	<title>#{lex.title}</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+	<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"/>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" />
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"/>
+	<meta name="description" content="#{lex.metaDesc}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="#{lex.keywords}" />
+	<link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="page.css" />
+	<h:outputStylesheet library="css" name="hover.css" />
+	<h:outputScript library="js" name="qit3.js" />
+	<meta name="author" content="qetaa.com" />
+	<meta name="email" content="info@qetaa.com" />
+	<h:outputStylesheet library="css" name="bootstrap-rtl.css" />
+	<meta charset="UTF-8" />
+</h:head>
+<h:body>
+	<f:view>
+		<ui:include src="_includes/top.xhtml" />
+		<section id="account">
+			<ui:include src="_includes/menu_bar.xhtml" />
+		</section>
+		<section id="page">
+			<h:form id="form-1" enctype="multipart/form-data">
+				<!-- cart dialog -->
+					<div class="container" width="500px;">
+						<div class="card">
+								<div class="modal-header">
+									<h4 class="card-title">#{lex.quotationOrder}</h4>
+								</div>
+								<div class="card-body">
+									<h:panelGroup id="step">
+										<ui:include src="_includes/step_header.xhtml"/>
+									</h:panelGroup>
+									<h:panelGroup id="panel">
+										<ui:include src="_includes/step-1.xhtml"/>
+										<ui:include src="_includes/step-2.xhtml"/>
+										<ui:include src="_includes/step-3.xhtml"/>
+										<ui:include src="_includes/step-4.xhtml"/>
+										<ui:include src="_includes/step-5.xhtml"/>
+										<ui:include src="_includes/step-6.xhtml"/>
+										<ui:include src="_includes/step-7.xhtml"/>
+									</h:panelGroup>
+								</div>
+							</div>
+					</div>
+			</h:form>
+		</section>
+
+
+		<footer>
+			<ui:include src="/_includes/footer.xhtml" />
+		</footer>
+
+		<!--
+		<div class="w3-container">
+			<ajaxStatus onstart="PF('statusDialog').show()"
+				onsuccess="PF('statusDialog').hide()" />
+			<dialog widgetVar="statusDialog" modal="true" draggable="false"
+				closable="false" resizable="false" showHeader="false">
+				<h:graphicImage name="/images/ajax-loader.gif" />
+			</dialog>
+		</div>
+		-->
+	</f:view>
+</h:body>
+</html>

@@ -64,6 +64,7 @@ public class AppConstants {
 
 	//////////// QUOTATION SERVICE CALLS /////////////
 	public final static String POST_CREATE_QUOTATION_WIRE = PUBLIC_QUOTATION_SERVICE + "quotation/wire-transfer";
+	public final static String POST_CREATE_QUOTATION_FREE = PUBLIC_QUOTATION_SERVICE + "quotation/free";
 	public final static String POST_CREATE_QUOTATION_CC = PUBLIC_QUOTATION_SERVICE + "quotation/credit-card";
 	public final static String PUT_QUOTATION_PAYMENT = PUBLIC_QUOTATION_SERVICE + "quotation/payment";
 	public final static String PUT_CLOSE_QUOTATION = PUBLIC_QUOTATION_SERVICE + "close-quotation";

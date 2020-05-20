@@ -85,7 +85,7 @@ header {
 	color: #000000;
 }
 .login ul a:hover{
-	color: #0F9E5E;
+	color: #9ACA3C;
 }
 .login ul a i{
 	font-size: 20px;
@@ -723,21 +723,69 @@ footer .list-inline{
 .close{
 	position: absolute;
 	left: 10px;
+	z-index: 5;
 }
 form label{
 	font-weight: normal;
 	font-size: 12px;
+	display: block;
+	color: #7e7e7e;
 }
 form .form-control{
 	margin-right: 0;
 }
 .login a.reset-password{
 	font-size: 12px ;
-	margin-bottom: 15px;
-	display: block;
+	margin-bottom: 0;
+	float: left;
 }
 .btn-primary,
 .btn-primary:hover{
 	background: #95c83d;
 	border-color: #95c83d;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active{
+	background: #8BB734;
+	border-color: #769E28;
+}
+.form-control:focus {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(149, 200, 61, .6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(149, 200, 61, .6);
+}
+#login-modal .modal-header{
+	padding: 0;
+	border-top-width: 0;
+}
+#login-modal .tab-content{
+	padding-top: 20px;
+}
+#login-modal .nav-tabs > li{
+	width: 50%;
+	text-align: center;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+	border-width: 0;
+	border-bottom: 2px solid #9ACA3C;
+	color: black;
+}
+.nav-tabs > li > a{
+	color: #a39d9d;
+}
+.nav > li > a:hover, .nav > li > a:focus{
+	color: #a39d9d;
+	border-color: #fff #fff #ddd;
+	background: #f6f6f6;
+}
+.mandatory{
+	color: #8BB734;
+	font-size: 15px;
 }

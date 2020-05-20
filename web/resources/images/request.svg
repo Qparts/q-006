@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="62.141" height="74.033" viewBox="0 0 62.141 74.033">
+  <g id="request" transform="translate(-0.698 -0.467)">
+    <g id="Rectangle_10" data-name="Rectangle 10" transform="translate(4.198 3.967)" fill="none" stroke="#d5d5d5" stroke-width="3.5">
+      <rect width="55.141" height="61.737" stroke="none"/>
+      <rect x="-1.75" y="-1.75" width="58.641" height="65.237" fill="none"/>
+    </g>
+    <rect id="Rectangle_11" data-name="Rectangle 11" width="38.903" height="3.383" transform="translate(9.949 23.334)" fill="#9aca3c"/>
+    <rect id="Rectangle_12" data-name="Rectangle 12" width="21.143" height="3.383" transform="translate(9.949 14.877)" fill="#9aca3c"/>
+    <rect id="Rectangle_13" data-name="Rectangle 13" width="42.286" height="3.383" transform="translate(9.949 31.03)" fill="#9aca3c"/>
+    <g id="Group_15" data-name="Group 15" transform="translate(17.814 46.591)">
+      <circle id="Ellipse_3" data-name="Ellipse 3" cx="13.954" cy="13.954" r="13.954"/>
+      <g id="Group_14" data-name="Group 14" transform="translate(1.205 5.8)">
+        <g id="Group_13" data-name="Group 13">
+          <path id="Path_19" data-name="Path 19" d="M33.636,74.072l.085-.085,6.512,2.368a.083.083,0,0,0,.085-.085l4.144-14.293c0-.085-.085-.169-.085-.085L22.388,70.351c-.085,0-.085.169,0,.254l6.766,2.453.085.085,2.03,4.905c0,.085.085.085.169,0l3.214-3.552s.085-.085,0-.085m-2.2-1.353h0l-.761,2.791c0,.085-.169.085-.169,0l-1.353-3.3v-.085l11.163-7.95c.085-.085.169.085.085.169Z" transform="translate(-22.325 -61.859)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

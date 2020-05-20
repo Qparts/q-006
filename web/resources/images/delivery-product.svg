@@ -1,0 +1,21 @@
+<svg id="delivery-product" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88.8" height="74" viewBox="0 0 88.8 74">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_18" data-name="Path 18" d="M88.356,40.4l-11.84-13.32a1.152,1.152,0,0,0-1.036-.444H65.12V7.4a1.4,1.4,0,0,0-1.48-1.48H45.88V1.48A1.4,1.4,0,0,0,44.4,0H20.72a1.4,1.4,0,0,0-1.48,1.48V5.92H1.48A1.4,1.4,0,0,0,0,7.4V60.68a1.4,1.4,0,0,0,1.48,1.48h7.4V59.2H2.96V53.28h59.2V59.2H32.56v2.96H63.64a1.4,1.4,0,0,0,1.48-1.48V29.6h9.768l9.176,10.36H74v2.96H85.84V60.68H88.8V41.44A1.6,1.6,0,0,0,88.356,40.4ZM22.2,2.96H42.92V5.92H22.2ZM2.96,50.32V8.88h59.2V50.32Z" fill="#d5d5d5"/>
+    </clipPath>
+  </defs>
+  <path id="Path_14" data-name="Path 14" d="M16.88,38a8.88,8.88,0,1,0,8.88,8.88A8.906,8.906,0,0,0,16.88,38Zm0,14.8a5.92,5.92,0,1,1,5.92-5.92A5.937,5.937,0,0,1,16.88,52.8Z" transform="translate(3.84 18.24)" fill="#d5d5d5"/>
+  <path id="Path_15" data-name="Path 15" d="M53.88,38a8.88,8.88,0,1,0,8.88,8.88A8.906,8.906,0,0,0,53.88,38Zm0,14.8a5.92,5.92,0,1,1,5.92-5.92A5.937,5.937,0,0,1,53.88,52.8Z" transform="translate(21.6 18.24)" fill="#d5d5d5"/>
+  <rect id="Rectangle_5" data-name="Rectangle 5" width="12" height="3" transform="translate(9 37)" fill="#9aca3c"/>
+  <rect id="Rectangle_6" data-name="Rectangle 6" width="25" height="3" transform="translate(9 43)" fill="#9aca3c"/>
+  <path id="Path_16" data-name="Path 16" d="M24.88,11a8.88,8.88,0,1,0,8.88,8.88A8.906,8.906,0,0,0,24.88,11Zm0,14.8a5.92,5.92,0,1,1,5.92-5.92A5.937,5.937,0,0,1,24.88,25.8Z" transform="translate(7.68 5.28)"/>
+  <rect id="Rectangle_7" data-name="Rectangle 7" width="5" height="4" transform="translate(74 47)" fill="#d5d5d5"/>
+  <circle id="Ellipse_1" data-name="Ellipse 1" cx="3.7" cy="3.7" r="3.7" transform="translate(17.02 61.42)" fill="#d5d5d5"/>
+  <circle id="Ellipse_2" data-name="Ellipse 2" cx="3.7" cy="3.7" r="3.7" transform="translate(71.78 61.42)" fill="#d5d5d5"/>
+  <path id="Path_17" data-name="Path 17" d="M65.12,26.64V7.4a1.4,1.4,0,0,0-1.48-1.48H45.88V1.48A1.4,1.4,0,0,0,44.4,0H20.72a1.4,1.4,0,0,0-1.48,1.48V5.92H1.48A1.4,1.4,0,0,0,0,7.4V60.68a1.4,1.4,0,0,0,1.48,1.48h7.4V59.2H2.96V53.28h59.2V59.2H32.56v2.96H63.64a1.4,1.4,0,0,0,1.48-1.48V26.64ZM22.2,2.96H42.92V5.92H22.2ZM2.96,50.32V8.88h59.2V50.32Z"/>
+  <g id="Group_12" data-name="Group 12">
+    <g id="Group_11" data-name="Group 11" clip-path="url(#clip-path)">
+      <rect id="Rectangle_8" data-name="Rectangle 8" width="40.996" height="65.416" transform="translate(65.12 8.288)" fill="#d5d5d5"/>
+    </g>
+  </g>
+</svg>

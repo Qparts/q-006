@@ -20,22 +20,19 @@
     <meta name="keywords" content="#{lex.keywords}" />
     <link rel="shortcut icon" type="image/x-icon"
           href="#{resource['images/favicon.ico']}" />
-
-    <h:outputStylesheet library="css" name="style.css" />
+    <h:outputStylesheet library="css" name="bootstrap-rtl.css" position="last" />
     <h:outputStylesheet library="css" name="page.css" />
     <h:outputStylesheet library="css" name="hover.css" />
     <h:outputScript library="js" name="qit3.js" />
+    <h:outputStylesheet library="css" name="style.css" position="last"/>
     <meta name="author" content="qetaa.com" />
     <meta name="email" content="info@qetaa.com" />
 
-    <h:outputStylesheet library="css" name="bootstrap-rtl.css" />
+
     <meta charset="UTF-8" />
 </h:head>
 <h:body>
     <ui:include src="_includes/top.xhtml" />
-    <section id="account">
-        <ui:include src="_includes/menu_bar.xhtml" />
-    </section>
     <section id="pricing">
         <ui:include src="_includes/index_start_here.xhtml" />
     </section>

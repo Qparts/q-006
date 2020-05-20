@@ -6,11 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baacee50-9dbe-45c6-9583-74fe2389dc7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/q_app_006/q-app-006.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/q_app_006/q-app-006.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="baacee50-9dbe-45c6-9583-74fe2389dc7d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -197,7 +193,7 @@
       <updated>1589234592879</updated>
       <workItem from="1589234594765" duration="16098000" />
       <workItem from="1589447292962" duration="252000" />
-      <workItem from="1589800759401" duration="27871000" />
+      <workItem from="1589800759401" duration="27890000" />
     </task>
     <servers />
   </component>
@@ -209,6 +205,10 @@
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="319" y="95" key="#JBoss_Server/0.23.1440.801@0.23.1440.801" timestamp="1589849402143" />
+    <state x="321" y="87" key="#Notifications" timestamp="1589965499052">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="321" y="87" key="#Notifications/0.23.1440.798@0.23.1440.798" timestamp="1589965499052" />
     <state x="370" y="155" key="#Schemas_and_DTDs" timestamp="1589849428097">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
@@ -298,9 +298,9 @@
       <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state x="486" y="220" key="git4idea.merge.GitMergeDialog/0.23.1440.798@0.23.1440.798" timestamp="1589962204434" />
-    <state x="446" y="220" key="git4idea.merge.GitPullDialog" timestamp="1589965455739">
+    <state x="446" y="220" key="git4idea.merge.GitPullDialog" timestamp="1589965513875">
       <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="446" y="220" key="git4idea.merge.GitPullDialog/0.23.1440.798@0.23.1440.798" timestamp="1589965455739" />
+    <state x="446" y="220" key="git4idea.merge.GitPullDialog/0.23.1440.798@0.23.1440.798" timestamp="1589965513875" />
   </component>
 </project>

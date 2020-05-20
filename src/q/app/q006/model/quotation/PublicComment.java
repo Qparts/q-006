@@ -1,10 +1,15 @@
 package q.app.q006.model.quotation;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.json.bind.annotation.JsonbDateFormat;
+import java.io.Serializable;
 import java.util.Date;
 
-public class PublicComment {
+public class PublicComment implements Serializable {
 
     private long id;
+    @JsonbDateFormat(value = JsonbDateFormat.TIME_IN_MILLIS)
     private Date created;
     private String text;
 

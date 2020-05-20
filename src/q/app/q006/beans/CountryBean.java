@@ -1,6 +1,5 @@
 package q.app.q006.beans;
 
-
 import q.app.q006.helpers.AppConstants;
 import q.app.q006.model.location.PublicCity;
 import q.app.q006.model.location.PublicCountry;

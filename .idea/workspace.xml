@@ -2,248 +2,305 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="q-006:war exploded" />
+      <artifact name="q-app-006" />
     </artifacts-to-build>
   </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3ad5ac-704c-4dff-acbd-7b4053e68add" name="Default Changelist" comment="home page and login updates">
+    <list default="true" id="baacee50-9dbe-45c6-9583-74fe2389dc7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/q_006_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/q_006_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/_includes/top.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/_includes/top.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/q_app_006/q-app-006.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/AddToCartBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CreateQuotationBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/MakesBean$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/MakesBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/filter/LoggedFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/filter/LoggingFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/filter/NotLoggedFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/AppConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/product/PublicReview.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationItemRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotationItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/reqs/Requester.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/q-006.iml" beforeDir="false" afterPath="$PROJECT_DIR$/q-006.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="jsf" />
+        <option value="Class" />
+      </list>
     </option>
+  </component>
+  <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1btIB8jZwSTosN5nMP04pnBcpcg" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1bmQ3nTV00b6VEWJrNTTd6TxTX3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.21095666" />
+    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="q.app.q006.beans" />
+      <recent name="q.app.q006.filter" />
+      <recent name="q.app.q006.helpers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
+      <recent name="$PROJECT_DIR$/src/q/app/q006/filter" />
+      <recent name="$PROJECT_DIR$/web/_includes" />
+      <recent name="$PROJECT_DIR$/src/q/app/q006/beans" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="JBoss 18.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 18.0.1.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+    <configuration name="Jboss 19.0.1.Final" type="JBossConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="JBoss 19.1.0.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="PORT" value="8081" />
+      <option name="LOCAL" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/q-app-006/" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
-        <artifact name="q-006:war exploded">
-          <settings />
+        <artifact name="q-app-006">
+          <settings DEPLOYMENT_METHOD="Staging" />
         </artifact>
       </deployment>
       <server-settings>
-        <option name="SERVER" />
-        <option name="BINDING_SET_NAME" value="" />
-        <option name="DOMAIN" value="false" />
-        <option name="SERVER_GROUP" value="main-server-group" />
-        <option name="USERNAME" value="" />
-        <option name="CREDENTIAL_ALIAS" />
+        <data>
+          <option name="credentialAlias" value="a071f998-0e12-46a0-b46d-10ef0bdcb330" />
+          <option name="managementPort" value="9991" />
+          <option name="serverGroup" value="" />
+          <option name="stagingRemotePath" value="" />
+          <option name="transportStagingTarget">
+            <TransportTarget>
+              <option name="id" value="84dca2e2-3d2f-4a7a-9584-6703bc60dbf8" />
+              <id>84dca2e2-3d2f-4a7a-9584-6703bc60dbf8</id>
+            </TransportTarget>
+          </option>
+          <option name="username" value="fareed" />
+          <username>fareed</username>
+          <credential-alias>a071f998-0e12-46a0-b46d-10ef0bdcb330</credential-alias>
+          <management-port>9991</management-port>
+          <server-group />
+          <transport-target>
+            <TransportTarget>
+              <option name="id" value="84dca2e2-3d2f-4a7a-9584-6703bc60dbf8" />
+              <id>84dca2e2-3d2f-4a7a-9584-6703bc60dbf8</id>
+            </TransportTarget>
+          </transport-target>
+          <staging-path />
+        </data>
       </server-settings>
       <predefined_log_file enabled="true" id="JBoss" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50351" />
+        <option name="DEBUG_PORT" value="64258" />
+        <option name="LOCAL" value="false" />
       </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="q-006:war exploded" />
-        </option>
+        <option name="BuildArtifacts" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Jboss 19.0.1.Final" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ca3ad5ac-704c-4dff-acbd-7b4053e68add" name="Default Changelist" comment="" />
-      <created>1589444824441</created>
+      <changelist id="baacee50-9dbe-45c6-9583-74fe2389dc7d" name="Default Changelist" comment="" />
+      <created>1589234592879</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1589444824441</updated>
-      <workItem from="1589444827746" duration="1657000" />
-      <workItem from="1589446491991" duration="1208000" />
-      <workItem from="1589699755052" duration="1952000" />
-      <workItem from="1589720231188" duration="5086000" />
-      <workItem from="1589788602402" duration="34585000" />
+      <updated>1589234592879</updated>
+      <workItem from="1589234594765" duration="16098000" />
+      <workItem from="1589447292962" duration="252000" />
+      <workItem from="1589800759401" duration="28955000" />
     </task>
-    <task id="LOCAL-00001" summary="home page and login updates">
-      <created>1589964963124</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1589964963124</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="home page and login updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="home page and login updates" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="0" key="#Project_Structure" timestamp="1589445180596">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="319" y="95" key="#JBoss_Server" timestamp="1589849402143">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
-    <state x="248" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1589445180596" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589721522429">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="319" y="95" key="#JBoss_Server/0.23.1440.801@0.23.1440.801" timestamp="1589849402143" />
+    <state x="321" y="87" key="#Notifications" timestamp="1589965499052">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589721522429" />
-    <state x="499" y="167" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1589444958699">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="321" y="87" key="#Notifications/0.23.1440.798@0.23.1440.798" timestamp="1589965499052" />
+    <state x="370" y="155" key="#Schemas_and_DTDs" timestamp="1589849428097">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
-    <state x="499" y="167" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589444958699" />
-    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1589445851202">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="370" y="155" key="#Schemas_and_DTDs/0.23.1440.801@0.23.1440.801" timestamp="1589849428097" />
+    <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589966191487">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589445851202" />
-    <state width="1024" height="158" key="GridCell.Tab.0.bottom" timestamp="1589964594681">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.798@0.23.1440.798" timestamp="1589966191487" />
+    <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.801@0.23.1440.801" timestamp="1589852123816" />
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser" timestamp="1589851038614">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
-    <state width="1024" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589964594681" />
-    <state width="1024" height="158" key="GridCell.Tab.0.center" timestamp="1589964594681">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.798@0.23.1440.798" timestamp="1589833039009" />
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.801@0.23.1440.801" timestamp="1589851038614" />
+    <state x="533" y="113" key="#com.intellij.ide.util.MemberChooser/0.23.1440.804@0.23.1440.804" timestamp="1589325845954" />
+    <state x="135" y="155" width="1270" height="669" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1589852122824">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
-    <state width="1024" height="158" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589964594681" />
-    <state width="1024" height="158" key="GridCell.Tab.0.left" timestamp="1589964594681">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="319" y="95" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.23.1440.798@0.23.1440.798" timestamp="1589234687302" />
+    <state x="135" y="155" width="1270" height="669" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.23.1440.801@0.23.1440.801" timestamp="1589852122824" />
+    <state x="666" y="195" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1589965878689">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state width="1024" height="158" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589964594681" />
-    <state width="1024" height="158" key="GridCell.Tab.0.right" timestamp="1589964594681">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="666" y="195" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.1440.798@0.23.1440.798" timestamp="1589965878689" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom" timestamp="1589966572249">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state width="1024" height="158" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589964594681" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1589446542419">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1589800815380" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1589966572249" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1589852855544" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1589326720460" />
+    <state width="958" height="204" key="GridCell.Tab.0.center" timestamp="1589966572249">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589446542419" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589965015615">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1589800815380" />
+    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1589966572249" />
+    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1589852855543" />
+    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1589326720459" />
+    <state width="958" height="204" key="GridCell.Tab.0.left" timestamp="1589966572249">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589965015615" />
-    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589961005364">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1589800815379" />
+    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1589966572249" />
+    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1589852855543" />
+    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1589326720459" />
+    <state width="958" height="204" key="GridCell.Tab.0.right" timestamp="1589966572249">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589961005364" />
-    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1589955839107">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1589800815380" />
+    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1589966572249" />
+    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1589852855544" />
+    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1589326720460" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom" timestamp="1589966572248">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1589955839107" />
-    <state x="541" y="314" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1589964723851">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.797@0.23.1440.797" timestamp="1589800815379" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.798@0.23.1440.798" timestamp="1589966572248" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.801@0.23.1440.801" timestamp="1589852855542" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1589326720459" />
+    <state width="958" height="204" key="GridCell.Tab.1.center" timestamp="1589966572248">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="541" y="314" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589964723851" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589967024060">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.797@0.23.1440.797" timestamp="1589800815378" />
+    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.798@0.23.1440.798" timestamp="1589966572248" />
+    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.801@0.23.1440.801" timestamp="1589852855541" />
+    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1589326720458" />
+    <state width="958" height="204" key="GridCell.Tab.1.left" timestamp="1589966572247">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589967024060" />
+    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.797@0.23.1440.797" timestamp="1589800815377" />
+    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.798@0.23.1440.798" timestamp="1589966572247" />
+    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.801@0.23.1440.801" timestamp="1589852855541" />
+    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1589326720457" />
+    <state width="958" height="204" key="GridCell.Tab.1.right" timestamp="1589966572248">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.797@0.23.1440.797" timestamp="1589800815379" />
+    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.798@0.23.1440.798" timestamp="1589966572248" />
+    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.801@0.23.1440.801" timestamp="1589852855542" />
+    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1589326720458" />
+    <state x="173" y="91" key="MergeDialog" timestamp="1589965721783">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="173" y="91" key="MergeDialog/0.23.1440.798@0.23.1440.798" timestamp="1589965721783" />
+    <state x="174" y="144" width="1150" height="554" key="MultipleFileMergeDialog" timestamp="1589965761816">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="174" y="144" width="1150" height="554" key="MultipleFileMergeDialog/0.23.1440.798@0.23.1440.798" timestamp="1589965761816" />
+    <state x="349" y="123" key="NewModule_or_Project.wizard" timestamp="1589966502087">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="349" y="123" key="NewModule_or_Project.wizard/0.23.1440.798@0.23.1440.798" timestamp="1589966502087" />
+    <state x="0" y="23" width="1440" height="798" key="SettingsEditor" timestamp="1589966567228">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="0" y="23" width="1440" height="798" key="SettingsEditor/0.23.1440.798@0.23.1440.798" timestamp="1589966567228" />
+    <state x="0" y="23" key="SettingsEditor/0.23.1440.801@0.23.1440.801" timestamp="1589853510997" />
+    <state x="486" y="220" key="git4idea.merge.GitMergeDialog" timestamp="1589962204434">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="486" y="220" key="git4idea.merge.GitMergeDialog/0.23.1440.798@0.23.1440.798" timestamp="1589962204434" />
+    <state x="446" y="220" key="git4idea.merge.GitPullDialog" timestamp="1589965603359">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="446" y="220" key="git4idea.merge.GitPullDialog/0.23.1440.798@0.23.1440.798" timestamp="1589965603359" />
   </component>
 </project>

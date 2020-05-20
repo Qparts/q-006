@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+
+	<h:panelGroup rendered="#{createQuotationBean.step eq 7}">
+		<div class="row setup-content step">
+			<div class="col-xs-12">
+				<div class="col-md-12 well text-center">
+					<div class="row">
+						<h:panelGroup id="complete">
+							<div align="center">
+								<p>
+									#{lex.yourOrderNumber} <span>#{createQuotationBean.lastOrderId}</span>
+								</p>
+								<p>
+									<h:outputText value="#{lex.orderReceived}" />
+								</p>
+								<p>#{lex.thanksForTrusting}</p>
+							</div>
+							<h:outputText value="#{createQuotationBean.resetAll()}"/>
+						</h:panelGroup>
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:panelGroup>
+</ui:composition>

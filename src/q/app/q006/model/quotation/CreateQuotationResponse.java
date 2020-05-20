@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CreateQuotationResponse implements Serializable {
-    private long quotationId;
+    private int quotationId;
     private List<Map<String,Object>> items;
     private String vehicleImageName;
     private boolean uploadImage;
@@ -27,11 +27,11 @@ public class CreateQuotationResponse implements Serializable {
         this.vehicleImageName = vehicleImageName;
     }
 
-    public long getQuotationId() {
+    public int getQuotationId() {
         return quotationId;
     }
 
-    public void setQuotationId(long quotationId) {
+    public void setQuotationId(int quotationId) {
         this.quotationId = quotationId;
     }
 

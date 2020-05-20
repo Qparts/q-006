@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+
+
+
+	<h:panelGroup rendered="#{createQuotationBean.step eq 2}">
+		<div class="row setup-content step" id="step-2">
+			<div class="col-xs-12">
+				<div class="col-md-12 well text-center">
+					<p class="title-price">#{lex.selectModel}</p>
+					<div class="row">
+						<ui:repeat value="#{createQuotationBean.selectedMake.models}" var="model">
+							<div class="col-4">
+								<b:commandLink value="#{model.nameAr}" actionListener="#{createQuotationBean.chooseModel(model)}" update=":form-1"/>
+							</div>
+						</ui:repeat>
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:panelGroup>
+</ui:composition>

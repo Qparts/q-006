@@ -1,6 +1,8 @@
 package q.app.q006.model.product;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -14,6 +16,7 @@ public class PublicReview implements Serializable {
     private Integer rating;
     private String text;
     private long productId;
+    @JsonFormat(shape=JsonFormat.Shape.NUMBER)
     private Date created;
 
 

@@ -3,8 +3,10 @@ package q.app.q006.model.quotation;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import q.app.q006.model.product.PublicProduct;
 
+import java.io.Serializable;
 
-public class PublicQuotationItem {
+
+public class PublicQuotationItem implements Serializable {
 
     private long id;
     private int quantity;
@@ -12,21 +14,9 @@ public class PublicQuotationItem {
     private String name;
     private PublicProduct products;
 
-
     public void initNewQuantity(){
         newQuantity = quantity;
     }
-
-
-    @JsonIgnore
-    public int[] getQuantityArray(){
-        int[] quantityArray = new int[20];
-        for (int i = 0; i < quantityArray.length; i++) {
-            quantityArray[i] = i + 1;
-        }
-        return quantityArray;
-    }
-
 
     public PublicProduct getProducts() {
         return products;
@@ -55,7 +45,6 @@ public class PublicQuotationItem {
     public String getName() {
         return name;
     }
-
 
     public int getNewQuantity() {
         return newQuantity;

@@ -1,15 +1,21 @@
 package q.app.q006.model.quotation;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.omnifaces.component.validator.ValidateAll;
 
+import javax.json.bind.annotation.JsonbDateFormat;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class PublicQuotation {
+public class PublicQuotation implements Serializable {
 
 
     private long id;
     private long customerId;
+    @JsonbDateFormat(value = JsonbDateFormat.TIME_IN_MILLIS)
     private Date created;
     private Long customerVehicleId;
     private int cityId;
@@ -57,9 +63,6 @@ public class PublicQuotation {
     }
 
 
-
-
-
     public long getId() {
         return id;
     }
@@ -92,22 +95,6 @@ public class PublicQuotation {
         this.customerVehicleId = customerVehicleId;
     }
 
-    public List<PublicQuotationItem> getQuotationItems() {
-        return quotationItems;
-    }
-
-    public void setQuotationItems(List<PublicQuotationItem> quotationItems) {
-        this.quotationItems = quotationItems;
-    }
-
-    public List<PublicComment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<PublicComment> comments) {
-        this.comments = comments;
-    }
-
     public int getCityId() {
         return cityId;
     }
@@ -122,5 +109,21 @@ public class PublicQuotation {
 
     public void setRead(boolean read) {
         this.read = read;
+    }
+
+    public List<PublicQuotationItem> getQuotationItems() {
+        return quotationItems;
+    }
+
+    public void setQuotationItems(List<PublicQuotationItem> quotationItems) {
+        this.quotationItems = quotationItems;
+    }
+
+    public List<PublicComment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<PublicComment> comments) {
+        this.comments = comments;
     }
 }

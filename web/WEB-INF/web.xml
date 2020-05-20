@@ -32,19 +32,21 @@
         <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
         <param-value>true</param-value>
     </context-param>
-    <!--<filter>
+    <filter>
         <filter-name>loggedFilter</filter-name>
-        <filter-class>q.app.qetaa.filters.LoggedFilter</filter-class>
+        <filter-class>q.app.q006.filter.LoggedFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>loggedFilter</filter-name>
         <url-pattern>/_includes/*</url-pattern>
         <url-pattern>/successful</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/register</url-pattern>
         <url-pattern>/coming-soon</url-pattern>
     </filter-mapping>
     <filter>
         <filter-name>notLoggedFilter</filter-name>
-        <filter-class>q.app.qetaa.filters.NotLoggedFilter</filter-class>
+        <filter-class>q.app.q006.filter.NotLoggedFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>notLoggedFilter</filter-name>
@@ -66,7 +68,6 @@
         <param-name>org.omnifaces.EXCEPTION_TYPES_TO_UNWRAP</param-name>
         <param-value>javax.ejb.EJBException,javax.persistence.RollbackException</param-value>
     </context-param>
-    -->
     <error-page>
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>
         <location>/error.xhtml</location>

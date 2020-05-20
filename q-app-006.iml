@@ -41,7 +41,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/jackson-annotations-2.8.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/jackson-annotations-2.11.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -50,7 +50,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/jackson-core-2.9.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/jackson-core-2.11.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -59,7 +59,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/jackson-databind-2.9.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/jackson-databind-2.11.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/javax.json.bind-api-1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -7,38 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baacee50-9dbe-45c6-9583-74fe2389dc7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/q/app/q006/beans/CreateQuotationBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q/app/q006/beans/MakesBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q/app/q006/filter/LoggingFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-core-2.9.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-databind-2.9.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step-1.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step-2.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step-3.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step-4.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step-5.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step-6.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step-7.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/_includes/step_header.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/create-quotation.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/q/app/q006/beans/AddToCartBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/q/app/q006/beans/QuotationsBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/q/app/q006/filter/LoggedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/q/app/q006/filter/NotLoggedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-annotations-2.11.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-core-2.11.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-databind-2.11.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/javax.json.bind-api-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/add-to-cart.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/quotations.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/q_app_006/q-app-006.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/q_app_006/q-app-006.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/AppConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/AppConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationItemRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationItemRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/product/PublicReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/product/PublicReview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicComment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotationItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotationItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/q-app-006.iml" beforeDir="false" afterPath="$PROJECT_DIR$/q-app-006.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q/app/q006/beans/CountryBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/beans/CountryBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q/app/q006/helpers/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/helpers/AppConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q/app/q006/helpers/lexicon.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/helpers/lexicon.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q/app/q006/helpers/lexicon_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/helpers/lexicon_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/quotation/CreateQuotationItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/quotation/CreateQuotationItemRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/quotation/CreateQuotationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/quotation/CreateQuotationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q/app/q006/reqs/Requester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/reqs/Requester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/product/PublicReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/product/PublicReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotationItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotationItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-annotations-2.8.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-core-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jackson-databind-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +61,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -78,19 +71,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="q.app.q006.filter" />
       <recent name="q.app.q006.beans" />
+      <recent name="q.app.q006.filter" />
       <recent name="q.app.q006.helpers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
-      <recent name="$PROJECT_DIR$/web/_includes" />
       <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
+      <recent name="$PROJECT_DIR$/src/q/app/q006/filter" />
+      <recent name="$PROJECT_DIR$/web/_includes" />
       <recent name="$PROJECT_DIR$/src/q/app/q006/beans" />
-      <recent name="$PROJECT_DIR$/web/resources/css" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JBoss Server.Jboss 19.0.1.Final">
     <configuration name="JBoss 14.0.1.Final" type="JBossConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="JBoss 14.0.1.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="PORT" value="8081" />
       <option name="LOCAL" value="false" />
@@ -139,6 +132,58 @@
         </option>
       </method>
     </configuration>
+    <configuration name="Jboss 19.0.1.Final" type="JBossConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="JBoss 19.1.0.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="PORT" value="8081" />
+      <option name="LOCAL" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/q-app-006/" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="q-app-006">
+          <settings DEPLOYMENT_METHOD="Staging" />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <data>
+          <option name="credentialAlias" value="a071f998-0e12-46a0-b46d-10ef0bdcb330" />
+          <option name="managementPort" value="9991" />
+          <option name="serverGroup" value="" />
+          <option name="stagingRemotePath" value="" />
+          <option name="transportStagingTarget">
+            <TransportTarget>
+              <option name="id" value="84dca2e2-3d2f-4a7a-9584-6703bc60dbf8" />
+              <id>84dca2e2-3d2f-4a7a-9584-6703bc60dbf8</id>
+            </TransportTarget>
+          </option>
+          <option name="username" value="fareed" />
+          <username>fareed</username>
+          <credential-alias>a071f998-0e12-46a0-b46d-10ef0bdcb330</credential-alias>
+          <management-port>9991</management-port>
+          <server-group />
+          <transport-target>
+            <TransportTarget>
+              <option name="id" value="84dca2e2-3d2f-4a7a-9584-6703bc60dbf8" />
+              <id>84dca2e2-3d2f-4a7a-9584-6703bc60dbf8</id>
+            </TransportTarget>
+          </transport-target>
+          <staging-path />
+        </data>
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64258" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="q-app-006" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JBoss Server.JBoss 14.0.1.Final" />
+      <item itemvalue="JBoss Server.Jboss 19.0.1.Final" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -180,7 +225,7 @@
       <updated>1589234592879</updated>
       <workItem from="1589234594765" duration="16098000" />
       <workItem from="1589447292962" duration="252000" />
-      <workItem from="1589800759401" duration="16461000" />
+      <workItem from="1589800759401" duration="26834000" />
     </task>
     <servers />
   </component>
@@ -188,84 +233,98 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589236761073">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state x="319" y="95" key="#JBoss_Server" timestamp="1589849402143">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="319" y="95" key="#JBoss_Server/0.23.1440.801@0.23.1440.801" timestamp="1589849402143" />
+    <state x="370" y="155" key="#Schemas_and_DTDs" timestamp="1589849428097">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="370" y="155" key="#Schemas_and_DTDs/0.23.1440.801@0.23.1440.801" timestamp="1589849428097" />
+    <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589852123816">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.798@0.23.1440.798" timestamp="1589236761073" />
-    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser" timestamp="1589833039009">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.801@0.23.1440.801" timestamp="1589852123816" />
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser" timestamp="1589851038614">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.798@0.23.1440.798" timestamp="1589833039009" />
-    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.801@0.23.1440.801" timestamp="1589824666035" />
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.801@0.23.1440.801" timestamp="1589851038614" />
     <state x="533" y="113" key="#com.intellij.ide.util.MemberChooser/0.23.1440.804@0.23.1440.804" timestamp="1589325845954" />
-    <state x="319" y="95" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1589234687302">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state x="135" y="155" width="1270" height="669" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1589852122824">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="319" y="95" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.23.1440.798@0.23.1440.798" timestamp="1589234687302" />
+    <state x="135" y="155" width="1270" height="669" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.23.1440.801@0.23.1440.801" timestamp="1589852122824" />
     <state x="666" y="195" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1589234644641">
       <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state x="666" y="195" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.1440.798@0.23.1440.798" timestamp="1589234644641" />
-    <state width="958" height="204" key="GridCell.Tab.0.bottom" timestamp="1589840039433">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom" timestamp="1589852855544">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1589800815380" />
-    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1589840039433" />
-    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1589315587392" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1589847029471" />
+    <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1589852855544" />
     <state width="958" height="204" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1589326720460" />
-    <state width="958" height="204" key="GridCell.Tab.0.center" timestamp="1589840039432">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.0.center" timestamp="1589852855543">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1589800815380" />
-    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1589840039432" />
-    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1589315587391" />
+    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1589847029471" />
+    <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1589852855543" />
     <state width="958" height="204" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1589326720459" />
-    <state width="958" height="204" key="GridCell.Tab.0.left" timestamp="1589840039432">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.0.left" timestamp="1589852855543">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1589800815379" />
-    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1589840039432" />
-    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1589315587391" />
+    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1589847029470" />
+    <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1589852855543" />
     <state width="958" height="204" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1589326720459" />
-    <state width="958" height="204" key="GridCell.Tab.0.right" timestamp="1589840039432">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.0.right" timestamp="1589852855544">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1589800815380" />
-    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1589840039432" />
-    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1589315587391" />
+    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1589847029471" />
+    <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1589852855544" />
     <state width="958" height="204" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1589326720460" />
-    <state width="958" height="204" key="GridCell.Tab.1.bottom" timestamp="1589840039431">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom" timestamp="1589852855542">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.797@0.23.1440.797" timestamp="1589800815379" />
-    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.798@0.23.1440.798" timestamp="1589840039431" />
-    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.801@0.23.1440.801" timestamp="1589315587390" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.798@0.23.1440.798" timestamp="1589847029470" />
+    <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.801@0.23.1440.801" timestamp="1589852855542" />
     <state width="958" height="204" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1589326720459" />
-    <state width="958" height="204" key="GridCell.Tab.1.center" timestamp="1589840039430">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.1.center" timestamp="1589852855541">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.797@0.23.1440.797" timestamp="1589800815378" />
-    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.798@0.23.1440.798" timestamp="1589840039430" />
-    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.801@0.23.1440.801" timestamp="1589315587390" />
+    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.798@0.23.1440.798" timestamp="1589847029469" />
+    <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.801@0.23.1440.801" timestamp="1589852855541" />
     <state width="958" height="204" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1589326720458" />
-    <state width="958" height="204" key="GridCell.Tab.1.left" timestamp="1589840039430">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.1.left" timestamp="1589852855541">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.797@0.23.1440.797" timestamp="1589800815377" />
-    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.798@0.23.1440.798" timestamp="1589840039430" />
-    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.801@0.23.1440.801" timestamp="1589315587389" />
+    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.798@0.23.1440.798" timestamp="1589847029469" />
+    <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.801@0.23.1440.801" timestamp="1589852855541" />
     <state width="958" height="204" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1589326720457" />
-    <state width="958" height="204" key="GridCell.Tab.1.right" timestamp="1589840039431">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state width="958" height="204" key="GridCell.Tab.1.right" timestamp="1589852855542">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.797@0.23.1440.797" timestamp="1589800815379" />
-    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.798@0.23.1440.798" timestamp="1589840039431" />
-    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.801@0.23.1440.801" timestamp="1589315587390" />
+    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.798@0.23.1440.798" timestamp="1589847029469" />
+    <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.801@0.23.1440.801" timestamp="1589852855542" />
     <state width="958" height="204" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1589326720458" />
-    <state x="0" y="23" width="1440" height="798" key="SettingsEditor" timestamp="1589839136814">
+    <state x="0" y="23" width="1440" height="798" key="SettingsEditor" timestamp="1589853510997">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="0" y="23" width="1440" height="798" key="SettingsEditor/0.23.1440.798@0.23.1440.798" timestamp="1589239110392" />
-    <state x="0" y="23" key="SettingsEditor/0.23.1440.801@0.23.1440.801" timestamp="1589839136814" />
+    <state x="0" y="23" key="SettingsEditor/0.23.1440.801@0.23.1440.801" timestamp="1589853510997" />
+    <state x="446" y="220" key="git4idea.merge.GitPullDialog" timestamp="1589962042899">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="446" y="220" key="git4idea.merge.GitPullDialog/0.23.1440.798@0.23.1440.798" timestamp="1589962042899" />
   </component>
 </project>

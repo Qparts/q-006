@@ -1,24 +1,81 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui">
 	<header>
 		<div class="container headertop">
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<div class="col-md-4 col-sm-12">
 					<a href="index"> 
-						<h:graphicImage value="/resources/images/logo.png"
-							rendered="true" styleClass="img-responsive logo" />
+						<h:graphicImage value="/resources/images/jubail-logo.png"
+							rendered="true" styleClass="logo" />
 					</a>
 				</div>
-				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-					<ul class="nav navbar-nav navbar-right">
-						<li><i class="fa fa-headphones" aria-hidden="true"/>#{lex.customerServiceSpecial}</li>
-						<li><i class="fa fa-credit-card-alt" aria-hidden="true"/>#{lex.bestPricesGurantee}</li>
-					</ul>
+				<div class="col-md-8 col-sm-12 login">
+
+					<h:panelGroup rendered="#{not loginBean.logged}">
+						<ul class="list-inline">
+							<li>
+
+								<a href="#login-modal" data-toggle="modal">
+									<i class="fa fa-user-circle"/>#{lex.login} / #{lex.createNewAccount}
+								</a>
+								<b:modal id="login-modal" title="#{lex.login}" >
+									<h:form>
+										<b:messages />
+										<div class="form-group">
+											<label>#{lex.emailOrMobile}</label>
+											<h:inputText id="login-email"
+														 value="#{loginBean.username}"
+														 styleClass="form-control" />
+										</div>
+										<div class="form-group">
+											<label>#{lex.password}</label>
+											<h:inputSecret id="login-password" value="#{loginBean.password}" styleClass="form-control" />
+										</div>
+										<h:outputLink value="reset-password" styleClass="reset-password">
+											#{lex.forgotPassword}
+										</h:outputLink>
+										<div>
+											<b:commandButton value="#{lex.login}"
+															 look="primary" actionListener="#{loginBean.login}" styleClass="col-xs-12" update="@form"/>
+										</div>
+
+									</h:form>
+								</b:modal>
+							</li>
+						</ul>
+
+						<!--<div class="col-md-3 col-xs-6">
+							<a id="myBtn2" style="padding-left: 10px;" href="register"><i
+									class="fa fa-address-card-o" style="color: red" />
+								#{lex.createNewAccount}</a>
+						</div>-->
+					</h:panelGroup>
+					<h:panelGroup rendered="#{loginBean.logged}">
+						<div class="col-md-2 col-xs-6">
+							<a href="#" style="padding-left: 10px;">
+								<i class="fa fa-user"/> #{lex.welcome}
+								#{loginBean.loginObject.customer.firstName}
+							</a>
+						</div>
+						<div class="col-md-2 col-xs-6">
+							<h:form>
+								<b:commandLink value="#{lex.logout}" actionListener="#{loginBean.doLogout()}">
+									<i class="fa fa-shopping-cart"/>
+								</b:commandLink>
+							</h:form>
+						</div>
+
+						<div class="col-md-2 col-xs-6">
+							<a href="quotations" style="padding-left: 10px;"> <i
+									class="fa fa-shopping-cart" /> #{lex.myOrders}
+							</a>
+						</div>
+					</h:panelGroup>
 				</div>
 			</div>
 		</div>
 	</header>
-
-
 </ui:composition>

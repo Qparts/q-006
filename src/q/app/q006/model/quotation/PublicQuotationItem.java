@@ -14,6 +14,15 @@ public class PublicQuotationItem implements Serializable {
     private String name;
     private PublicProduct products;
 
+    @JsonIgnore
+    public int[] getQuantityArray() {
+        int[] quantityArray = new int[20];
+        for (int i = 0; i < quantityArray.length; i++) {
+            quantityArray[i] = i + 1;
+        }
+        return quantityArray;
+    }
+
     public void initNewQuantity(){
         newQuantity = quantity;
     }

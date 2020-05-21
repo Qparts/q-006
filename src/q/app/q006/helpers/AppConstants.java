@@ -9,6 +9,8 @@ public class AppConstants {
 	private final static String PUBLIC_LOCATION_SERVICE = SysProps.getValue("locationPublicService");
 	private final static String INVOICE_SERVICE = SysProps.getValue("invoiceService");
 	public final static String APP_SECRET = SysProps.getValue("appSecret");
+	public final static double VAT_PERCENTAGE = 0.05;
+	public final static double DELIVERY_FEES = 35;
 
 	//===============HOST=================//
 	

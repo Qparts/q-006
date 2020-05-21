@@ -1,9 +1,7 @@
 package q.app.q006.model.quotation;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.omnifaces.component.validator.ValidateAll;
+import q.app.q006.helpers.AppConstants;
 
 import javax.json.bind.annotation.JsonbDateFormat;
 import java.io.Serializable;
@@ -45,12 +43,12 @@ public class PublicQuotation implements Serializable {
 
     @JsonIgnore
     public double getDeliveryFees(){
-        return 35;
+        return AppConstants.DELIVERY_FEES;
     }
 
     @JsonIgnore
     public double getTotalVat(){
-        return getSubtotal() * 0.05;
+        return getSubtotal() * AppConstants.VAT_PERCENTAGE;
     }
 
     @JsonIgnore

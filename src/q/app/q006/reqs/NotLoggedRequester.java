@@ -35,5 +35,12 @@ public class NotLoggedRequester implements Serializable{
 		return r;
 	}
 
+	public <T> Response putSecuredRequest(String link, T t) {
+		Builder b = ClientBuilder.newClient().target(link).request();
+		b.header(HttpHeaders.AUTHORIZATION, getSecurityHeader());
+		Response r = b.put(Entity.entity(t, "application/json"));
+		return r;
+	}
+
  
 }

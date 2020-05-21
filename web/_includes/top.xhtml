@@ -17,7 +17,6 @@
 					<h:panelGroup rendered="#{not loginBean.logged}">
 						<ul class="list-inline">
 							<li>
-
 								<a href="#login-modal" data-toggle="modal">
 									<i class="fa fa-user-circle"/>#{lex.login} / #{lex.createNewAccount}
 								</a>
@@ -39,9 +38,8 @@
 										</h:outputLink>
 										<div>
 											<b:commandButton value="#{lex.login}"
-															 look="primary" actionListener="#{loginBean.login}" styleClass="col-xs-12" update="@form"/>
+															 look="primary" actionListener="#{loginBean.login()}" styleClass="col-xs-12" update="@form"/>
 										</div>
-
 									</h:form>
 								</b:modal>
 							</li>
@@ -53,6 +51,8 @@
 								#{lex.createNewAccount}</a>
 						</div>-->
 					</h:panelGroup>
+
+
 					<h:panelGroup rendered="#{loginBean.logged}">
 						<div class="col-md-2 col-xs-6">
 							<a href="#" style="padding-left: 10px;">

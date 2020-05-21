@@ -24,7 +24,7 @@ public class AddToCartBean implements Serializable {
 
 
     @Inject
-   // private CartBean cartBean;
+    private CartBean cartBean;
 
 
     @PostConstruct
@@ -48,9 +48,9 @@ public class AddToCartBean implements Serializable {
 
     public void checkout() {
         if (quotation.getTotalProducts() > 0) {
-       //     cartBean.init();
-         //   cartBean.addQuotation(quotation);
-           // cartBean.setStage(2);
+            cartBean.init();
+            cartBean.addQuotation(quotation);
+            cartBean.setStage(2);
             Helper.redirect("select-address");
         } else {
             Helper.addErrorMessage(Bundler.getValue("partsNotSelected"));

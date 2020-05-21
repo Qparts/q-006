@@ -7,36 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baacee50-9dbe-45c6-9583-74fe2389dc7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/q_006_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/q_006_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/q/app/q006/beans/CartBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/q/app/q006/beans/ResetPasswordBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/q/app/q006/beans/SelectAddressBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/_includes/head.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/checkout.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/reset-password.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/select-address.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/q_app_006/q-app-006.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/AddToCartBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CountryBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/CreateQuotationBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/MakesBean$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/MakesBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/beans/QuotationsBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/filter/LoggedFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/filter/LoggingFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/filter/NotLoggedFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/AppConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/helpers/lexicon_en.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/product/PublicReview.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationItemRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/CreateQuotationResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicComment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/model/quotation/PublicQuotationItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/q-app-006/q/app/q006/reqs/Requester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/q-006.iml" beforeDir="false" afterPath="$PROJECT_DIR$/q-006.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/beans/AddToCartBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/beans/AddToCartBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/helpers/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/helpers/AppConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/helpers/lexicon_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/helpers/lexicon_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotationItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/model/quotation/PublicQuotationItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q/app/q006/reqs/NotLoggedRequester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q/app/q006/reqs/NotLoggedRequester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/_includes/footer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/_includes/footer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/_includes/top.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/_includes/top.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/add-to-cart.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/add-to-cart.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/quotations.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/quotations.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,9 +71,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/_includes" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
       <recent name="$PROJECT_DIR$/src/q/app/q006/filter" />
-      <recent name="$PROJECT_DIR$/web/_includes" />
       <recent name="$PROJECT_DIR$/src/q/app/q006/beans" />
     </key>
   </component>
@@ -181,7 +170,7 @@
       <updated>1589234592879</updated>
       <workItem from="1589234594765" duration="16098000" />
       <workItem from="1589447292962" duration="252000" />
-      <workItem from="1589800759401" duration="28955000" />
+      <workItem from="1589800759401" duration="36467000" />
     </task>
     <servers />
   </component>
@@ -206,11 +195,11 @@
     </state>
     <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.798@0.23.1440.798" timestamp="1589966191487" />
     <state x="184" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.801@0.23.1440.801" timestamp="1589852123816" />
-    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser" timestamp="1589851038614">
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser" timestamp="1590012143138">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
-    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.798@0.23.1440.798" timestamp="1589833039009" />
-    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.801@0.23.1440.801" timestamp="1589851038614" />
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.798@0.23.1440.798" timestamp="1590008519073" />
+    <state x="533" y="112" key="#com.intellij.ide.util.MemberChooser/0.23.1440.801@0.23.1440.801" timestamp="1590012143138" />
     <state x="533" y="113" key="#com.intellij.ide.util.MemberChooser/0.23.1440.804@0.23.1440.804" timestamp="1589325845954" />
     <state x="135" y="155" width="1270" height="669" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1589852122824">
       <screen x="0" y="23" width="1440" height="801" />

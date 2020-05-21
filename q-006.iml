@@ -37,7 +37,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="JBoss 19.1.0.Final" level="application_server_libraries" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -74,5 +73,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="JBoss 18.0.1.Final" level="application_server_libraries" />
   </component>
 </module>

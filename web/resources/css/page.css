@@ -106,11 +106,6 @@ color:#446fb4;
     text-decoration: underline;
 }
 
-.step {
-	padding: 0;
-    margin-top: 30px;
-}
-
 .progress {
     position: relative;
     height:30px;
@@ -131,34 +126,6 @@ color:#446fb4;
     padding: 3px 10px 2px;
 }
 
-.step {
-    text-align: center;
-}
-
-.step .col-xs-2 {
-    background-color: #fff;
-    border: 1px solid #C0C0C0;
-    border-left: none;
-    min-height:88px;
-	width:14%;
-	padding-right: 8px;
-}
-
-.step .col-xs-2:last-child {
-    border: 1px solid #C0C0C0;
-}
-
-.step .col-xs-2:first-child {
-    border-radius: 0 5px 5px 0;
-}
-
-.step .col-xs-2:last-child {
-    border-radius: 0 0 5px 5px;
-}
-
-.step .col-md-2:hover {
-
-}
 
 .step .activestep {
     color: #F58723;
@@ -180,29 +147,14 @@ color:#446fb4;
     padding-top: 15px;
     font-size: 20px;
 }
-
-.step .title-price{
-	color:#F58723;
-}
-
 .step .subtitle-price{
 	font-size: 15px;
 }
-
 .btn-payment {
 	color: #fff;
 	background-color: green;
 	border-color: green;
 }
-	
-
-
-
-.step th{
-	text-align:center;
-}
-
-
 .border{
 	border: 1px solid #999;
 }
@@ -258,14 +210,36 @@ color:#446fb4;
 	text-align:center;
 	font-size:17px;
 }
-
-
-
-
-
-
-
-
+.steps-list{
+	display: flex;
+}
+.steps-list > div{
+	width: 16.66%;
+	padding: 10px;
+	background: #F4F4F4;
+	text-align: center;
+}
+.steps-list > div > p{
+	margin-bottom: 0;
+	display: inline-block;
+}
+.steps-list > div.activestep{
+	background: #8BB734;
+	color: white;
+}
+.setup-content .title-price{
+	font-size: 16px;
+	border-bottom: 1px solid #dfdfdf;
+	padding-bottom: 10px;
+	color: #7a7676;
+}
+.setup-content .alert-danger{
+	margin-bottom: 10px !important;
+	padding: 10px !important;
+}
+.setup-content .alert-danger .bficon-error-circle-o{
+	display: none;
+}
 @media (max-width: 640px){
 .step .fa {
     font-size:20px;

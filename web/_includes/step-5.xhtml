@@ -7,12 +7,11 @@
 	<h:panelGroup rendered="#{createQuotationBean.step eq 5}">
 		<div class="row setup-content step" >
 			<div class="col-xs-12">
-				<div class="col-md-12 well text-center">
+				<div class="well">
 					<p class="title-price">#{lex.addItems}</p>
-
 					<h:panelGroup id="table-holder">
 						<h:dataTable value="#{createQuotationBean.quotationItems}"
-									 var="item" id="table" styleClass="table">
+									 var="item" id="table" styleClass="table parts">
 							<h:column>
 								<f:facet name="header">
 									<h:outputText value="#{lex.itemNameOrNum}" />
@@ -43,21 +42,23 @@
 								</h:commandLink>
 							</h:column>
 						</h:dataTable>
-
-						<h:commandLink actionListener="#{createQuotationBean.addItem()}" value="#{lex.addAnItem}">
-							<span class="btn glyphicon glyphicon-plus" />
+						<b:messages id="item-msg" />
+						<h:commandLink actionListener="#{createQuotationBean.addItem()}" value="#{lex.addAnItem}" styleClass="add-part">
+							<span class="glyphicon glyphicon-plus" />
 							<f:ajax render=":form-1:table :form-1:item-msg"
 									execute="@this" />
 						</h:commandLink>
 
 					</h:panelGroup>
-					<b:messages id="item-msg" />
-					<br />
-					<b:commandButton look="primary" actionListener="#{createQuotationBean.resetToStep(3)}"
-									 value="#{lex.previous}" update=":form-1" process="@this" />
 
-					<b:commandButton look="primary" actionListener="#{createQuotationBean.verifyItems()}"
-									 value="#{lex.next}" update=":form-1" />
+					<div class="form-actions">
+						<b:commandButton actionListener="#{createQuotationBean.resetToStep(3)}"
+										 value="#{lex.previous}" update=":form-1" process="@this" />
+
+						<b:commandButton look="primary" actionListener="#{createQuotationBean.verifyItems()}"
+										 value="#{lex.next}" update=":form-1" />
+					</div>
+
 				</div>
 			</div>
 		</div>

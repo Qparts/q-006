@@ -7,88 +7,97 @@
 	<h:panelGroup rendered="#{createQuotationBean.step eq 6}">
 		<div class="row setup-content step" id="step-7">
 			<div class="col-xs-12">
-				<div class="col-md-12 well text-center">
+				<div class="well ">
 					<h3 class="title-price">#{lex.sendQuotationOrder}</h3>
 					<h:panelGroup rendered="#{loginBean.logged}">
-						<p>#{lex.make}: #{createQuotationBean.selectedMake.name} - #{createQuotationBean.selectedModel.name} - #{createQuotationBean.selectedYear.year}</p>
-						<p>#{lex.vin}: #{createQuotationBean.vin}</p>
-						<table class="table table-hover">
-							<thead>
-							<tr>
-								<th>#{lex.itemNameOrNum}</th>
-								<th>#{lex.quantity}</th>
-							</tr>
-							</thead>
-							<tbody>
-							<ui:repeat id="summary-table" var="item"
-									   value="#{createQuotationBean.quotationItems}">
-								<tr>
-									<td><h:outputText value="#{item.itemName}" /></td>
-									<td><h:outputText value="#{item.quantity}" /></td>
-								</tr>
-							</ui:repeat>
-							</tbody>
-						</table>
-						<br/>
-						<p class="title-price">#{lex.region}</p>
-						<b:selectOneMenu id="region"
-										 value="#{createQuotationBean.selectedRegionId}" required="true" update="city-panel">
-							<f:selectItem noSelectionOption="true"  itemLabel="#{lex.selectRegion}" />
-							<f:selectItems
-									value="#{countryBean.getCountryFromId(loginBean.loginObject.customer.countryId).regions}" var="city"
-									itemValue="#{city.id}" itemLabel="#{city.nameAr}" />
-						</b:selectOneMenu>
-						<h:panelGroup id="city-panel">
-							<h:panelGroup rendered="#{createQuotationBean.selectedRegionId gt 0}">
-								<p class="title-price">#{lex.city}</p>
-								<b:selectOneMenu id="city"
-												 value="#{createQuotationBean.selectedCityId}" required="true" update=":form-1">
-									<f:selectItems
-											value="#{countryBean.getRegionFromId(createQuotationBean.selectedRegionId).cities}" var="city"
-											itemValue="#{city.id}" itemLabel="#{city.nameAr}" />
-								</b:selectOneMenu>
-
-								<br />
-
-								<br />
-								<br />
-								<div>
-									<b:selectBooleanCheckbox style="height: 20px!important;" value="#{createQuotationBean.agree}" update="submit" process="@this"/>
-									<br/>
-									<h:outputLink value="terms" target="_blank">
-										<h:outputText value="  #{lex.agreeTerms}" />
-									</h:outputLink>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="vehicle-info">
+									<p><label>#{lex.make}</label>: #{createQuotationBean.selectedMake.name} - #{createQuotationBean.selectedModel.name} - #{createQuotationBean.selectedYear.year}</p>
+									<p><label>#{lex.vin}</label>: #{createQuotationBean.vin}</p>
 								</div>
-							</h:panelGroup>
-						</h:panelGroup>
+								<table class="table table-hover parts">
+									<thead>
+									<tr>
+										<th>#{lex.itemNameOrNum}</th>
+										<th>#{lex.quantity}</th>
+									</tr>
+									</thead>
+									<tbody>
+									<ui:repeat id="summary-table" var="item"
+											   value="#{createQuotationBean.quotationItems}">
+										<tr>
+											<td><h:outputText value="#{item.itemName}" /></td>
+											<td><h:outputText value="#{item.quantity}" /></td>
+										</tr>
+									</ui:repeat>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="location-info">
+							<div class="row">
+								<div class="col-md-6">
+									<label>#{lex.region}</label>
+									<b:selectOneMenu id="region"
+													 value="#{createQuotationBean.selectedRegionId}" required="true" update="city-panel">
+										<f:selectItem noSelectionOption="true"  itemLabel="#{lex.selectRegion}" />
+										<f:selectItems
+												value="#{countryBean.getCountryFromId(loginBean.loginObject.customer.countryId).regions}" var="city"
+												itemValue="#{city.id}" itemLabel="#{city.nameAr}" />
+									</b:selectOneMenu>
+								</div>
+								<div class="col-md-6">
+									<h:panelGroup id="city-panel">
+										<h:panelGroup rendered="#{createQuotationBean.selectedRegionId gt 0}">
+											<label>#{lex.city}</label>
+											<b:selectOneMenu id="city"
+															 value="#{createQuotationBean.selectedCityId}" required="true" update=":form-1">
+												<f:selectItems
+														value="#{countryBean.getRegionFromId(createQuotationBean.selectedRegionId).cities}" var="city"
+														itemValue="#{city.id}" itemLabel="#{city.nameAr}" />
+											</b:selectOneMenu>
 
+										</h:panelGroup>
+									</h:panelGroup>
+								</div>
+							</div>
+							<div>
+								<b:selectBooleanCheckbox  value="#{createQuotationBean.agree}" caption="#{lex.agreeTerms}" update="submit" process="@this"/>
+							</div>
+						</div>
 					</h:panelGroup>
-					<br />
-					<h:panelGroup rendered="#{not loginBean.logged}">
-						<h:outputLink value="/login">
-							<h:outputText value="#{lex.loginToComplete}" />
-						</h:outputLink>
-						<br />
-						<br/>
-						<h:outputText value="#{lex.dontHaveAccount}" />
-						<h:outputLink value="/register">
-							<h:outputText value="#{lex.registerNow}" />
-						</h:outputLink>
-						<br />
+					<h:panelGroup rendered="#{not loginBean.logged}" styleClass="text-center">
+						<p>
+							<h:outputLink value="/login">
+								#{lex.loginToComplete}
+							</h:outputLink>
+						</p>
+						<p>
+							<h:outputText value="#{lex.dontHaveAccount}" />
+							<h:outputLink value="/register">
+								#{lex.registerNow}
+							</h:outputLink>
+						</p>
+						<div class="form-actions text-center">
+							<b:commandButton  actionListener="#{createQuotationBean.resetToStep(5)}" value="#{lex.previous}" update=":form-1" process="@this">
+								<f:ajax execute="@this" render=":form-1" />
+							</b:commandButton>
+						</div>
 					</h:panelGroup>
-					<br /> <br />
-					<b:commandButton look="primary" actionListener="#{createQuotationBean.resetToStep(5)}" value="#{lex.previous}" update=":form-1" process="@this">
-						<f:ajax execute="@this" render=":form-1" />
-					</b:commandButton>
-					<br /> <br />
+
 					<b:messages/>
-					<b:commandButton rendered="#{loginBean.logged}" look="primary"
-									 actionListener="#{createQuotationBean.submit()}" id="submit"
-									 value="#{lex.submitOrder}"
-									 disabled="#{((not (createQuotationBean.agree)) or (createQuotationBean.selectedRegionId eq 0))}"
-									 update=":form-1" process="@form">
-					</b:commandButton>
-					<br />
+					<div class="form-actions">
+						<b:commandButton  rendered="#{loginBean.logged}" actionListener="#{createQuotationBean.resetToStep(5)}" value="#{lex.previous}" update=":form-1" process="@this">
+							<f:ajax execute="@this" render=":form-1" />
+						</b:commandButton>
+						<b:commandButton rendered="#{loginBean.logged}" look="primary"
+										 actionListener="#{createQuotationBean.submit()}" id="submit"
+										 value="#{lex.submitOrder}"
+										 disabled="#{((not (createQuotationBean.agree)) or (createQuotationBean.selectedRegionId eq 0))}"
+										 update=":form-1" process="@form">
+						</b:commandButton>
+					</div>
 				</div>
 			</div>
 		</div>

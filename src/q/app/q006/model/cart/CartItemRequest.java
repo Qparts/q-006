@@ -3,20 +3,27 @@ package q.app.q006.model.cart;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import q.app.q006.model.product.PublicProduct;
 
+import javax.json.bind.annotation.JsonbTransient;
+
 public class CartItemRequest {
     private long productId;
     private int quantity;
     private double salesPrice;
     private Long discountId;
 
+
     @JsonIgnore
+    @JsonbTransient
     private Discount discount;
+    @JsonbTransient
     @JsonIgnore
     private PublicProduct publicProduct;
+    @JsonbTransient
     @JsonIgnore
     private String itemName;
 
 
+    @JsonbTransient
     @JsonIgnore
     public double getDiscountValue(){
         if(discount != null){
@@ -25,6 +32,7 @@ public class CartItemRequest {
         return 0;
     }
 
+    @JsonbTransient
     @JsonIgnore
     public double getSalesPriceAfterDiscount(){
         return salesPrice - getDiscountValue();

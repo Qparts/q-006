@@ -13,7 +13,7 @@ public class RegisterModel implements Serializable {
     private Character type;//M = manual , F = facebook
     private Integer countryId;
     private String countryCode;
-    private String mobile;
+    private String mobile = "";
     private String password;
     private Integer createdBy;
     @JsonIgnore

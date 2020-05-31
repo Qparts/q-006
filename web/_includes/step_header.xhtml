@@ -3,30 +3,30 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 >
 
-	<div class="row step">
+	<div class="steps-list">
 		<div id="div1"
-			 class="col-2 #{createQuotationBean.step eq 1 ? 'activestep' : ''}">
+			 class="#{createQuotationBean.step eq 1 ? 'activestep' : ''}">
 			<i class="fa fa-car" aria-hidden="true"/>
 			<p>#{lex.stepHeaderMake}</p>
 		</div>
-		<div class="col-2 #{createQuotationBean.step eq 2 ? 'activestep' : ''}">
+		<div class="#{createQuotationBean.step eq 2 ? 'activestep' : ''}">
 			<i class="fa fa-bullseye" aria-hidden="true"/>
 			<p>#{lex.stepHeaderModel}</p>
 		</div>
-		<div class="col-2 #{createQuotationBean.step eq 3 ? 'activestep' : ''}">
+		<div class="#{createQuotationBean.step eq 3 ? 'activestep' : ''}">
 			<i class="fa fa-calendar-o" aria-hidden="true"/>
 			<p>#{lex.stepHeaderModelYear}</p>
 		</div>
-		<div class="col-2 #{createQuotationBean.step eq 4 ? 'activestep' : ''}">
+		<div class="#{createQuotationBean.step eq 4 ? 'activestep' : ''}">
 			<i class="fa fa-sort-numeric-asc" aria-hidden="true"/>
 			<p>#{lex.stepHeaderVin}</p>
 		</div>
-		<div class="col-2 #{createQuotationBean.step eq 5 ? 'activestep' : ''}">
+		<div class="#{createQuotationBean.step eq 5 ? 'activestep' : ''}">
 			<i class="fa fa-columns" aria-hidden="true"/>
 			<p>#{lex.stepHeaderItems}</p>
 		</div>
 		<div id="last"
-			 class="col-2 #{createQuotationBean.step eq 6 ? 'activestep' : ''}">
+			 class="#{createQuotationBean.step eq 6 ? 'activestep' : ''}">
 			<i class="fa fa-paper-plane" aria-hidden="true"/>
 			<p>#{lex.stepHeaderOrder}</p>
 		</div>

@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <div class="row">
+        <div class="col-12" align="center">
+            <div class="paragraph-title">#{lex.stepHeaderPayment}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-xs-12">
+            <div class="row">
+                <div class="col-3">
+                    <h:graphicImage value="/resources/images/visa.png" style="width: 50px"/>
+                </div>
+                <div class="col-3">
+                    <h:graphicImage value="/resources/images/mastercard.png" style="width: 50px"/>
+                </div>
+                <div class="col-3">
+                    <h:graphicImage value="/resources/images/amex.jpg" style="width: 50px"/>
+                </div>
+                <div class="col-3">
+                    <h:graphicImage value="/resources/images/mada.png" style="width: 50px"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-xs-12">
+            <div class="row">
+                <div class="col-12">
+                    <b:inputText placeholder="#{lex.cardNumber}" id="number"
+                                 value="#{cartBean.cartRequest.ccNumber}" maxlength="16"/>
+                </div>
+                <div class="col-12">
+                    <b:inputText placeholder="#{lex.cardName}" id="name" value="#{cartBean.cartRequest.ccName}"/>
+                </div>
+                <div class="col-4">
+                    <h:outputText value="#{lex.cartYear}" style="font-size: 12px; color: #aaaaaa"/>
+                    <b:selectOneMenu value="#{cartBean.cartRequest.ccYear}">
+                        <f:selectItems value="#{cartBean.expiryDates}" var="year" itemValue="#{year}"
+                                       itemLabel="#{year}"/>
+                    </b:selectOneMenu>
+                </div>
+                <div class="col-4">
+                    <h:outputText value="#{lex.cartMonth}" style="font-size: 12px; color: #aaaaaa"/>
+                    <b:selectOneMenu value="#{cartBean.cartRequest.ccYear}">
+                        <f:selectItems value="#{cartBean.expiryMonths}" var="month" itemValue="#{month}"
+                                       itemLabel="#{month}"/>
+                    </b:selectOneMenu>
+                </div>
+                <div class="col-4">
+                    <h:outputText value="#{lex.cvc}" style="font-size: 12px; color: #aaaaaa"/>
+                    <b:inputText value="#{cartBean.cartRequest.ccCvc}" maxlength="4"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</ui:composition>

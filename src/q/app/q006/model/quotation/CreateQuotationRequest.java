@@ -1,6 +1,7 @@
 package q.app.q006.model.quotation;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import q.app.q006.model.cart.PaymentRequest;
 
 import java.util.List;
 

@@ -1,9 +1,10 @@
 package q.app.q006.model.cart;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import q.app.q006.helpers.AppConstants;
 import q.app.q006.model.customer.PublicAddress;
-import q.app.q006.model.quotation.PaymentRequest;
 
+import javax.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
 import java.util.List;
 
@@ -11,11 +12,13 @@ public class CartRequest implements Serializable {
 
     private long customerId;
     private long addressId;
+    @JsonbTransient
     @JsonIgnore
     private PublicAddress address;
     private double deliveryCharges;
     private Long discountId;
     @JsonIgnore
+    @JsonbTransient
     private Discount discount;
     private Integer preferredCuorier;
     private List<CartItemRequest> cartItems;
@@ -23,17 +26,8 @@ public class CartRequest implements Serializable {
     private PaymentRequest paymentRequest;
 
 
-
-
-    private Integer ccMonth;
-    private Integer ccYear;
-    private String ccName;
-    private String ccNumber;
-    private String ccCvc;
-
-
-
     @JsonIgnore
+    @JsonbTransient
     public double getTotalProducts(){
         double total = 0;
         for(CartItemRequest cartItem : cartItems){
@@ -43,6 +37,7 @@ public class CartRequest implements Serializable {
     }
 
     @JsonIgnore
+    @JsonbTransient
     public double getTotalProductsAfterDiscount(){
         double total = 0;
         for(CartItemRequest cartItem : cartItems){
@@ -52,6 +47,7 @@ public class CartRequest implements Serializable {
     }
 
     @JsonIgnore
+    @JsonbTransient
     public double getTotalProductsDiscountValue(){
         double total = 0;
         for(CartItemRequest cartItem : cartItems){
@@ -61,6 +57,7 @@ public class CartRequest implements Serializable {
     }
 
     @JsonIgnore
+    @JsonbTransient
     public double getTotalDiscount(){
         double total = 0;
         for(CartItemRequest cartItem : cartItems){
@@ -77,6 +74,7 @@ public class CartRequest implements Serializable {
      * @return a total before discount and vat
      */
     @JsonIgnore
+    @JsonbTransient
     public double getSubTotal(){
         return getTotalProducts() + deliveryCharges;
     }
@@ -86,25 +84,30 @@ public class CartRequest implements Serializable {
      * @return a total before vat
      */
     @JsonIgnore
+    @JsonbTransient
     public double getSubTotalAfterDiscount(){
         return getTotalProducts() + deliveryCharges - getTotalDiscount();
     }
 
+    @JsonbTransient
     @JsonIgnore
     public double getTotalVat(){
-        return  getSubTotal() * 0.05;
+        return  getSubTotal() * AppConstants.VAT_PERCENTAGE;
     }
 
+    @JsonbTransient
     @JsonIgnore
     public double getTotalVatAfterDiscount(){
-        return  getSubTotalAfterDiscount() * 0.05;
+        return  getSubTotalAfterDiscount() * AppConstants.VAT_PERCENTAGE;
     }
 
+    @JsonbTransient
     @JsonIgnore
     public double getGrandTotal(){
         return getSubTotal() + getTotalVat();
     }
 
+    @JsonbTransient
     @JsonIgnore
     public double getGrandTotalAfterDiscount(){
         return getSubTotalAfterDiscount() + getTotalVatAfterDiscount() - walletAmount;
@@ -117,46 +120,6 @@ public class CartRequest implements Serializable {
 
     public void setPaymentRequest(PaymentRequest paymentRequest) {
         this.paymentRequest = paymentRequest;
-    }
-
-    public String getCcCvc() {
-        return ccCvc;
-    }
-
-    public void setCcCvc(String ccCvc) {
-        this.ccCvc = ccCvc;
-    }
-
-    public Integer getCcMonth() {
-        return ccMonth;
-    }
-
-    public void setCcMonth(Integer ccMonth) {
-        this.ccMonth = ccMonth;
-    }
-
-    public Integer getCcYear() {
-        return ccYear;
-    }
-
-    public void setCcYear(Integer ccYear) {
-        this.ccYear = ccYear;
-    }
-
-    public String getCcName() {
-        return ccName;
-    }
-
-    public void setCcName(String ccName) {
-        this.ccName = ccName;
-    }
-
-    public String getCcNumber() {
-        return ccNumber;
-    }
-
-    public void setCcNumber(String ccNumber) {
-        this.ccNumber = ccNumber;
     }
 
     public List<CartItemRequest> getCartItems() {

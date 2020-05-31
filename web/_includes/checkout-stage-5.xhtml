@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:panelGroup rendered="#{cartBean.stage eq 5}">
+		<div align="center">
+			<p>#{lex.orderPaid}</p>
+			<p>#{lex.thanksForTrusting}</p>
+			<p>
+				<h:outputLink value="/">#{lex.home}</h:outputLink>
+			</p>
+		</div>
+		<h:outputText value="#{cartBean.setStage(1)}"/>
+	</h:panelGroup>
+</ui:composition>

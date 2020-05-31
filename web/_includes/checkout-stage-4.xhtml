@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:f="http://java.sun.com/jsf/core">
+	<h:panelGroup rendered="#{cartBean.stage eq 4}">
+		<div align="center" class="paragraph-title">
+			<p>
+				<h:outputText value="#{lex.transferAmount}" />
+				<br />
+				<h:outputText value="#{cartBean.cartRequest.grandTotalAfterDiscount}">
+					<f:convertNumber type="currency" currencySymbol="SR " locale="en_US"  />
+				</h:outputText>
+			</p>
+		</div>
+		<div align="center">
+			<div align="center" class="col-md-10 col-md-offset-1">
+				<p>#{lex.thanksWire}</p>
+				<p>#{lex.contactUsTransfer}</p>
+				<p>#{lex.transferInfo}</p>
+				<ui:repeat var="bank" value="#{bankBean.banks}">
+					<table class="table center table-bordered">
+						<tr>
+							<td>#{lex.bankName}:</td>
+							<td><h:outputText value="#{bank.nameAr}" /></td>
+
+						</tr>
+						<tr>
+							<td>#{lex.bankAccountNo}:</td>
+							<td><h:outputText value="#{bank.account}" /></td>
+						</tr>
+						<tr>
+							<td>#{lex.bankIBAN}:</td>
+							<td><h:outputText value="#{bank.iban}" /></td>
+						</tr>
+						<tr>
+							<td>#{lex.bankAccountOwner}:</td>
+							<td><h:outputText value="#{bank.owner}" /></td>
+						</tr>
+					</table>
+					<br />
+				</ui:repeat>
+			</div>
+		</div>
+		<div align="center">
+			<p>
+				<h:outputLink value="/">#{lex.home}</h:outputLink>
+			</p>
+		</div>
+		<h:outputText value="#{cartBean.setStage(1)}"/>
+	</h:panelGroup>
+</ui:composition>

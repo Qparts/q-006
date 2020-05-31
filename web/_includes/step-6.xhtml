@@ -69,15 +69,15 @@
 					</h:panelGroup>
 					<h:panelGroup rendered="#{not loginBean.logged}" styleClass="text-center">
 						<p>
-							<h:outputLink value="/login">
+							<a href="#login-modal" data-toggle="modal">
 								#{lex.loginToComplete}
-							</h:outputLink>
+							</a>
 						</p>
 						<p>
 							<h:outputText value="#{lex.dontHaveAccount}" />
-							<h:outputLink value="/register">
+							<a href="#login-modal" data-toggle="modal">
 								#{lex.registerNow}
-							</h:outputLink>
+							</a>
 						</p>
 						<div class="form-actions text-center">
 							<b:commandButton  actionListener="#{createQuotationBean.resetToStep(5)}" value="#{lex.previous}" update=":form-1" process="@this">

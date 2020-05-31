@@ -7,7 +7,7 @@
 		<div class="container headertop">
 			<div class="row">
 				<div class="col-md-4 col-sm-12">
-					<a href="index">
+					<a href="/">
 						<h:graphicImage value="/resources/images/jubail-logo.png"
 							rendered="true" styleClass="logo" />
 					</a>
@@ -21,9 +21,8 @@
 									<i class="fa fa-user-circle"/>#{lex.login} / #{lex.createNewAccount}
 								</a>
 								<b:modal id="login-modal" >
-
 									<b:tabView activeIndex="0">
-										<b:tab title="#{lex.login}">
+										<b:tab title="#{lex.login}" id="login-tab">
 											<h:form>
 												<b:messages />
 												<div class="form-group">
@@ -49,7 +48,7 @@
 
 											</h:form>
 										</b:tab>
-										<b:tab title="#{lex.createNewAccount}">
+										<b:tab title="#{lex.createNewAccount}" id="register-tab">
 											<h:form >
 												<b:messages/>
 												<h:panelGroup rendered="#{registerBean.smsCode eq null}">

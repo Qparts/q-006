@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:o="http://omnifaces.org/ui">
+
+    <h:panelGroup rendered="#{cartBean.stage eq 3}">
+        <o:form id="form-3" includeViewParams="true">
+			<ui:include src="checkout-payment-fail.xhtml"/>
+			<ui:include src="checkout-products-table.xhtml"/>
+            <ui:include src="checkout-price-panel.xhtml"/>
+			<ui:include src="checkout-address-line.xhtml"/>
+	<!--		<ui:include src="checkout-payment-panel.xhtml"/>-->
+			<ui:include src="checkout-submit-button.xhtml"/>
+        </o:form>
+    </h:panelGroup>
+</ui:composition>

@@ -8,7 +8,7 @@ import q.app.q006.model.cart.CartRequest;
 import q.app.q006.model.cart.CartRequestResponse;
 import q.app.q006.model.cart.Discount;
 import q.app.q006.model.location.PublicCountry;
-import q.app.q006.model.quotation.PaymentRequest;
+import q.app.q006.model.cart.PaymentRequest;
 import q.app.q006.model.quotation.PublicQuotation;
 import q.app.q006.model.quotation.PublicQuotationItem;
 import q.app.q006.reqs.Requester;
@@ -55,11 +55,10 @@ public class CartBean implements Serializable {
         cartRequest.setCartItems(new ArrayList<>());
         cartRequest.setDeliveryCharges(35);
         cartRequest.setCustomerId(loginBean.getLoginObject().getCustomer().getId());
-        paymentMethod = 'N';
+        paymentMethod = 'V';
         havePromo = false;
-        promoVerified =false;
+        promoVerified = false;
         promoCodeQuery = "";
-        initLiveWallet();
     }
 
     public void checkStage() {
@@ -70,27 +69,18 @@ public class CartBean implements Serializable {
         }
     }
 
-    public void initLiveWallet(){
-        Response r = reqs.getSecuredRequest(AppConstants.getLiveWallet(loginBean.getLoginObject().getCustomer().getId()));
-        if(r.getStatus() == 200){
-            Map<String,Object> map = r.readEntity(Map.class);
-            this.cartRequest.setWalletAmount(((Number)map.get("amount")).doubleValue());
-        }
-    }
-
     //
     public void verifyPromoCode() {
         Response r = reqs.getSecuredRequest(AppConstants.getPromotionCodeFromCode(this.promoCodeQuery));
         if (r.getStatus() == 200) {
             promoVerified = true;
             Discount discount = r.readEntity(Discount.class);
-            if(discount.getDiscountType() == 'D'){
+            if (discount.getDiscountType() == 'D') {
                 this.cartRequest.setDiscountId(discount.getId());
                 this.cartRequest.setDiscount(discount);
-            }
-            else{
-                for(var cartItem : cartRequest.getCartItems()){
-                    if(cartItem.getDiscountId() == null){
+            } else {
+                for (var cartItem : cartRequest.getCartItems()) {
+                    if (cartItem.getDiscountId() == null) {
                         cartItem.setDiscount(discount);
                         cartItem.setDiscountId(discount.getId());
                     }
@@ -120,45 +110,29 @@ public class CartBean implements Serializable {
     }
 
     public void checkout() {
-        List<String> errors = verifyPayment();
-        if (errors.isEmpty()) {
-            if (this.paymentMethod == 'V') {
-                makeCreditCardRequest();
-            } else if (this.paymentMethod == 'W') {
-                makeWireTransferRequest();
-            }
-        } else {
-            for (String error : errors) {
-                Helper.addErrorMessage(error);
-            }
-        }
+        makeCreditCardRequest();
     }
 
-    private void preparePaymentRequest(PaymentRequest paymentRequest){
+    private void preparePaymentRequest(PaymentRequest paymentRequest) {
+        var customer = loginBean.getLoginObject().getCustomer();
+        var country = countryBean.getCountryFromId(customer.getCountryId());
         paymentRequest.setSalesType('C');
         paymentRequest.setPaymentMethod('C');
-        paymentRequest.setCustomerId(loginBean.getLoginObject().getCustomer().getId());
-        paymentRequest.setBaseAmount(this.cartRequest.getSubTotal());
-        paymentRequest.setPromoDiscount(this.cartRequest.getTotalDiscount());
-        paymentRequest.setVatPercentage(.05);
-        paymentRequest.setCreated(new Date());
-        paymentRequest.setCountryId(loginBean.getLoginObject().getCustomer().getCountryId());
+        paymentRequest.setCustomerId(customer.getId());
+        paymentRequest.setBaseAmount(cartRequest.getSubTotal());
+        paymentRequest.setPromoDiscount(cartRequest.getTotalDiscount());
+        paymentRequest.setVatPercentage(AppConstants.VAT_PERCENTAGE);
+        paymentRequest.setPromoId(cartRequest.getDiscountId() == null ? 0 : cartRequest.getDiscountId().intValue());
+        paymentRequest.setCountryId(country.getId());
         paymentRequest.setCurrency("SAR");
         paymentRequest.setThreeDSecure(true);
-        //card info
-        paymentRequest.setNumber(Long.valueOf(this.cartRequest.getCcNumber()));
-        paymentRequest.setExpMonth(this.cartRequest.getCcMonth());
-        paymentRequest.setExpYear(this.cartRequest.getCcYear() - 2000);
-        paymentRequest.setCvc(Integer.valueOf(this.cartRequest.getCcCvc()));
-        paymentRequest.setNameOnCard(this.cartRequest.getCcName());
-        PublicCountry country = countryBean.getCountryFromId(loginBean.getLoginObject().getCustomer().getCountryId());
+        paymentRequest.setDescription("Payment Order");
         paymentRequest.setCountry(country.getName());
-        //customer or vendor user
-        paymentRequest.setFirstName(loginBean.getLoginObject().getCustomer().getFirstName());
-        paymentRequest.setLastName(loginBean.getLoginObject().getCustomer().getLastName());
-        paymentRequest.setEmail(loginBean.getLoginObject().getCustomer().getEmail());
+        paymentRequest.setFirstName(customer.getFirstName());
+        paymentRequest.setLastName(customer.getLastName());
+        paymentRequest.setEmail(customer.getEmail());
         paymentRequest.setCountryCode(country.getCountryCode());
-        paymentRequest.setMobile(loginBean.getLoginObject().getCustomer().getMobile());
+        paymentRequest.setMobile(customer.getMobile());
         paymentRequest.setClientIp(getClientIp());
     }
 
@@ -177,6 +151,7 @@ public class CartBean implements Serializable {
         preparePaymentRequest(paymentRequest);
         cartRequest.setPaymentRequest(paymentRequest);
         Response r = reqs.postSecuredRequest(AppConstants.POST_CART_CREDIT_CARD, cartRequest);
+        System.out.println(r.getStatus());
         if (r.getStatus() == 202) {
             cartRequestResponse = r.readEntity(CartRequestResponse.class);
             Helper.redirect(cartRequestResponse.getTransactionUrl());
@@ -204,106 +179,35 @@ public class CartBean implements Serializable {
     }
 
 
-    private List<String> verifyPayment() {
-        List<String> errors = new ArrayList<>();
-        if (paymentMethod == 'V') {
-            cartRequest.setCcNumber(cartRequest.getCcNumber().trim());
-            Pattern pattern = Pattern.compile(regexCardNumber());
-            Matcher matcher = pattern.matcher(cartRequest.getCcNumber());
-            // check card number
-            if (!matcher.matches()) {
-                errors.add("*" + Bundler.getValue("wrongCartNumber"));
-            }
-            // check card name
-            cartRequest.setCcName(cartRequest.getCcName().trim());
-            if (cartRequest.getCcName().length() == 0 || !cartRequest.getCcName().contains(" ")) {
-                errors.add("*" + Bundler.getValue("wrongName"));
-            }
-            // check cvc
-
-            cartRequest.setCcCvc(cartRequest.getCcCvc().trim());
-            Pattern pattern2 = Pattern.compile(regexCVV());
-            Matcher matcher2 = pattern2.matcher(cartRequest.getCcCvc());
-            // check card number
-            if (!matcher2.matches()) {
-                errors.add("*" + Bundler.getValue("wrongCVC"));
-            }
-
-            // check card expiry date
-            Calendar c = Calendar.getInstance();
-            int currentYear = c.get(Calendar.YEAR);
-            int currentMonth = c.get(Calendar.MONTH) + 1;
-
-            if (cartRequest.getCcYear() < currentYear || (cartRequest.getCcYear() == currentYear && cartRequest.getCcMonth() <= currentMonth)) {
-                errors.add("*" + Bundler.getValue("cardExpired"));
-            }
-        }
-        if (this.paymentMethod == 'N') {
-            errors.add("*" + Bundler.getValue("selectPayment"));
-        }
-
-        if (cartRequest.getAddress() == null || cartRequest.getAddressId() == 0) {
-            errors.add("*" + Bundler.getValue("enterAddress"));
-        }
-        return errors;
-    }
-
-
-    private String regexCardNumber() {
-        return "^(?:(?<visa>4[0-9]{12}(?:[0-9]{3})?)|(?<mastercard>5[1-5][0-9]{14}))$";
-    }
-
-    private String regexCVV() {
-        return "^[0-9]{3}$";
-    }
-
-
-    public int[] getExpiryDates() {
-        int[] years = new int[10];
-        int year = Calendar.getInstance().get(Calendar.YEAR);
-        for (int i = 0; i < years.length; i++) {
-            years[i] = year;
-            year++;
-        }
-        return years;
-    }
-
-    public int[] getExpiryMonths() {
-        int[] months = new int[12];
-        for (int i = 0; i < months.length; i++) {
-            months[i] = i + 1;
-        }
-        return months;
-    }
-
-
     public void processPaymentResponse() {
         try {
-
             String tapChargeId = Helper.getParam("tap_id");
             Map<String, String> map = new HashMap<>();
             map.put("chargeId", tapChargeId);
+            if(tapChargeId == null ){
+                paymentFailed = true;
+                //throw  an error
+            }
             Response r = reqs.putSecuredRequest(AppConstants.PUT_PAYMENT_REQUEST, map);
             if (r.getStatus() == 200) {
                 //update cart status and fund wallet
                 paymentFailed = false;
                 stage = 5;
                 updateCartStatus("paid");
-                Helper.redirect("checkout");
-            } else if(r.getStatus() == 409){
+            } else if (r.getStatus() == 409) {
                 //this is duplicate
                 paymentFailed = false;
-                Helper.redirect("checkout");
-            }
-            else {
+            } else {
                 paymentFailed = true;
                 Helper.addErrorMessage("لم تتم عملية الدفع بنجاح, الرجاء المحاولة مرة اخرى");
                 updateCartStatus("failed");
-                Helper.redirect("checkout");
             }
 
         } catch (Exception ex) {
 
+        }
+        finally {
+            Helper.redirect("checkout");
         }
     }
 
@@ -313,7 +217,6 @@ public class CartBean implements Serializable {
         map.put("paymentStatus", status);
         Response r = reqs.putSecuredRequest(AppConstants.PUT_CART_PAYMENT, map);
     }
-
 
 
     public CartRequest getCartRequest() {

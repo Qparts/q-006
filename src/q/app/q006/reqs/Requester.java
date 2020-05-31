@@ -48,7 +48,6 @@ public class Requester implements Serializable{
 		return r;
 	}
 
-
 	public <T> Response postSecuredRequestAndLog(String link, T t) {
 		Invocation.Builder b = ClientBuilder.newClient().target(link).register(LoggingFilter.class).request();
 		b.header(HttpHeaders.AUTHORIZATION, getSecurityHeader());

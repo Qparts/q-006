@@ -41,6 +41,7 @@ public class RegisterBean implements Serializable {
         registerModel = new RegisterModel();
         registerModel.setType('M');
         registerModel.setCreatedBy(0);
+        registerModel.setCountryId(1);
 
     }
 

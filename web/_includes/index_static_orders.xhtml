@@ -3,15 +3,15 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-12 col-md-10 col-md-offset-1">
 				<h4 class="title-box text-center">
 					#{lex.latestOrders}
 				</h4>
-				<div class="row">
+				<div class="row static-orders">
 					<c:forEach begin="0" end="2" varStatus="loop">
-						<div class="col-sm-4 col-xs-12">
+						<div class="col-md-4">
 							<div class="other-box">
 								<h4>
 									<h:outputText value="#{staticOrdersBean.part[loop.index]}" />

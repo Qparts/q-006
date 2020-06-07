@@ -10,7 +10,7 @@
 				<div class="well">
 					<p class="title-price">#{lex.enterVin}</p>
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-8">
 							<b:inputText id="vin" value="#{createQuotationBean.vin}"
 										 required="true" requiredMessage="#{lex.enterVinReq}"
 										 validatorMessage="#{lex.invalidVin2}"
@@ -21,10 +21,14 @@
 							</b:inputText>
 							<b:message for="vin" id="vin-msg"  />
 						</div>
-						<!--<div class="col-md-4">
-
-							<b:link value="#{lex.whyVin}" tooltip="<img src='images/why-vin.png' />" tooltip-position="auto"/>
-						</div>-->
+						<div class="col-md-4">
+								<div class="tooltip-wrapper">
+									#{lex.whereVin}
+									<div class="tooltip">
+										<img src="../resources/images/reg.jpg"/>
+									</div>
+								</div>
+						</div>
 					</div>
 					<div class="form-actions">
 						<b:commandButton actionListener="#{createQuotationBean.resetToStep(2)}"

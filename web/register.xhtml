@@ -4,174 +4,24 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:b="http://bootsfaces.net/ui">
-
 <h:head>
-    <title>#{lex.title}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
-    <meta name="description" content="#{lex.metaDesc}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="keywords" content="#{lex.keywords}" />
-    <link rel="shortcut icon" type="image/x-icon"
-          href="#{resource['images/favicon.ico']}" />
-    <h:outputStylesheet library="css" name="style.css" />
-    <h:outputStylesheet library="css" name="page.css" />
-    <h:outputStylesheet library="css" name="hover.css" />
-
-    <h:outputScript library="js" name="qit3.js" />
-    <meta name="author" content="qetaa.com" />
-    <meta name="email" content="info@qetaa.com" />
-    <!-- CSS only
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"/>
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"/>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"/>
-
-    <h:outputStylesheet library="css" name="bootstrap-rtl.css" />
-    <meta charset="UTF-8" />
+    <ui:include src="_includes/head.xhtml"/>
 </h:head>
 <h:body>
     <ui:include src="/_includes/top.xhtml" />
+    <b:container fluid="true">
+        <b:row>
+            <b:column colMd="12">
+                <section class="box register-bage">
+                    <h2 class="title-box">#{lex.createNewAccount}</h2>
+                    <ui:include src="_includes/register-form.xhtml" />
+                </section>
+            </b:column>
+        </b:row>
+    </b:container>
 
-    <section id="account">
-        <div class="container">
-            <div class="row">
-                <ui:include src="/_includes/menu_bar.xhtml" />
-            </div>
-        </div>
-
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">X</button>
-                <h4 class="modal-title">#{lex.createNewAccount}</h4>
-            </div>
-            <h:form id="form-register-email"
-                    styleClass="form-horizontal pageform">
-                <h:panelGroup>
-                    <div class="modal-body">
-                        <div class="row">
-                            <h:panelGroup rendered="#{registerBean.smsCode eq null}">
-                                <div class="col-sm-6">
-                                    <p>#{lex.firstName}</p>
-                                    <h:inputText value="#{registerBean.registerModel.firstName}"
-                                                 requiredMessage="#{lex.firstNameRequired}"
-                                                 styleClass="form-control" required="true" />
-                                    <span>*</span>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>#{lex.lastName}</p>
-                                    <h:inputText value="#{registerBean.registerModel.lastName}"
-                                                 required="true" requiredMessage="#{lex.lastNameRequired}"
-                                                 styleClass="form-control"/>
-                                    <span>*</span>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <p>#{lex.email}</p>
-                                    <h:inputText value="#{registerBean.registerModel.email}"
-                                                 styleClass="form-control"
-                                                 required="true" requiredMessage="#{lex.emailRequired}"
-                                                 validatorMessage="#{lex.invalidEmail}">
-                                        <f:validateRegex
-                                                pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
-                                    </h:inputText>
-                                    <span>*</span>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>#{lex.country}</p>
-                                    <h:selectOneMenu value="#{registerBean.registerModel.countryId}" styleClass="form-control">
-                                        <f:selectItems value="#{countryBean.countries}" var="country" itemValue="#{country.id}" itemLabel="#{country.nameAr}"/>
-                                            <f:ajax execute="@this" update="mobile" />
-                                    </h:selectOneMenu>
-                                    <span>*</span>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>#{lex.mobile}</p>
-                                    <h:inputText id="mobile"
-                                                 required="true" requiredMessage="#{lex.mobileRequired}"
-                                                 value="#{registerBean.registerModel.mobile}"
-                                                 styleClass="form-control"
-                                                 onchange="parseArabic(this)"
-                                                 validatorMessage="#{lex.invalidMobile}">
-                                        <f:validateRegex pattern="#{(registerBean.registerModel.countryId ne null and registerBean.registerModel.countryId ne 0) ? countryBean.getCountryFromId(registerBean.registerModel.countryId).mobileRegex : countryBean.getCountryFromId(1).mobileRegex }" />
-                                    </h:inputText>
-                                    <span>*</span>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>#{lex.password}</p>
-                                    <h:inputSecret value="#{registerBean.registerModel.password}"
-                                                   requiredMessage="#{lex.passwordRequired}" required="true"
-                                                   styleClass="form-control" />
-                                    <span>*</span>
-                                </div>
-                                <div class="col-sm-6">
-                                    <p>#{lex.confirmPassword}</p>
-                                    <h:inputSecret
-                                            value="#{registerBean.registerModel.confirmPassword}"
-                                            required="true" requiredMessage="#{lex.passwordConfirmRequired}"
-                                            styleClass="form-control"/>
-                                    <span>*</span>
-                                </div>
-                            </h:panelGroup>
-                            <h:panelGroup rendered="#{registerBean.smsCode != null}">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <p>#{lex.smsCode}</p>
-                                            <h:inputSecret value="#{registerBean.smsCodeUser}"
-                                                           required="true" requiredMessage="#{lex.smsCodeRequired}"
-                                                           styleClass="form-control" />
-                                            <span>*</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </h:panelGroup>
-                        </div>
-
-                        <div>
-
-                            <h:panelGroup rendered="#{registerBean.smsCode eq null}">
-                                <div align="center">
-                                    <h:commandLink value="#{lex.requestSMS}"
-                                                   actionListener="#{registerBean.requestSMS()}"
-                                                   styleClass="bg-login">
-                                        <f:ajax execute="@form" render="@form" />
-                                    </h:commandLink>
-                                </div>
-                                <br />
-                            </h:panelGroup>
-                            <h:panelGroup rendered="#{registerBean.smsCode != null}">
-                                <div align="center">
-                                    <h:commandLink value="#{lex.activate}"
-                                                   actionListener="#{registerBean.signup()}"
-                                                   styleClass="bg-login">
-                                    </h:commandLink>
-                                </div>
-                            </h:panelGroup>
-                            <b:messages/>
-                        </div>
-
-                    </div>
-                </h:panelGroup>
-            </h:form>
-        </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
+    <footer>
+        <ui:include src="/_includes/footer.xhtml" />
+    </footer>
 </h:body>
 </html>

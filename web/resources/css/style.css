@@ -1,3 +1,8 @@
+body,html{
+	min-height: 100%;
+	height: 100%;
+	position: relative;
+}
 * {
 	padding: 0;
 	text-decoration: none;
@@ -11,20 +16,20 @@
 	font-family: 'sans';
 	src: url("#{resource['fonts/sans.eot']}");
 	src: url("#{resource['fonts/sans.eot']}") format('embedded-opentype'),
-		url("#{resource['fonts/sans.woff2']}") format('woff2'),
-		url("#{resource['fonts/sans.woff']}") format('woff'),
-		url("#{resource['fonts/sans.ttf']}") format('truetype'),
-		url("#{resource['fonts/sans.svg#sans']}") format('svg');
+	url("#{resource['fonts/sans.woff2']}") format('woff2'),
+	url("#{resource['fonts/sans.woff']}") format('woff'),
+	url("#{resource['fonts/sans.ttf']}") format('truetype'),
+	url("#{resource['fonts/sans.svg#sans']}") format('svg');
 }
 
 @font-face {
 	font-family: 'sansa';
 	src: url("#{resource['fonts/sansa.eot']}");
 	src: url("#{resource['fonts/sansa.eot']}") format('embedded-opentype'),
-		url("#{resource['fonts/sansa.woff2']}") format('woff2'),
-		url("#{resource['fonts/sansa.woff']}") format('woff'),
-		url("#{resource['fonts/sansa.ttf']}") format('truetype'),
-		url("#{resource['fonts/sansa.svg#sansa']}") format('svg');
+	url("#{resource['fonts/sansa.woff2']}") format('woff2'),
+	url("#{resource['fonts/sansa.woff']}") format('woff'),
+	url("#{resource['fonts/sansa.ttf']}") format('truetype'),
+	url("#{resource['fonts/sansa.svg#sansa']}") format('svg');
 }
 
 body {
@@ -49,15 +54,11 @@ a {
 	color: #95c83d;
 	text-decoration: none;
 }
-
-a:hover {
+a:hover, a:focus {
 	color: #95c83d;
 	text-decoration: none;
+	outline: none !important;
 }
-a:focus{
-	outline: none;
-}
-
 .clearfix:after {
 	clear: both;
 	content: ".";
@@ -129,12 +130,6 @@ header .navbar-right li i, header .navbar-right a>* {
 #social {
 	text-align: left;
 }
-
-
-.box {
-	margin-top: 70px;
-}
-
 .title-box {
 	color: #000000;
 	font-weight: 600;
@@ -345,7 +340,7 @@ footer .list-inline{
 }
 
 #myModal .modal-header, #myModal2 .modal-header, #myModal3 .modal-header,
-	#completeModal .modal-header {
+#completeModal .modal-header {
 	background-color: #99969a;
 	color: #fff;
 	text-align: center;
@@ -353,7 +348,7 @@ footer .list-inline{
 }
 
 #myModal .close, #myModal2 .close, #myModal3 .close, #completeModal .close
-	{
+{
 	position: absolute;
 	top: 15px;
 	left: 15px;
@@ -381,12 +376,12 @@ footer .list-inline{
 }
 
 #myModal .form-control, #myModal2 .form-control, #myModal3 .form-control,
-	#completeModal .form-control {
+#completeModal .form-control {
 	border-radius: 10px;
 }
 
 #myModal form span, #myModal2 form span, #myModal3 form span,
-	#completeModal form span {
+#completeModal form span {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -394,7 +389,7 @@ footer .list-inline{
 }
 
 #myModal .modal-body, #myModal2 .modal-body, #myModal3 .modal-body,
-	#completeModal .modal-body {
+#completeModal .modal-body {
 	padding: 12px 30px;
 }
 
@@ -543,9 +538,9 @@ footer .list-inline{
 	-webkit-box-shadow: inset 0 0px 1px rgba(0, 0, 0, .075);
 	box-shadow: inset 0 0px 1px rgba(0, 0, 0, .075);
 	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
-		ease-in-out .15s;
+	ease-in-out .15s;
 	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
-		.15s;
+	.15s;
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
@@ -553,9 +548,9 @@ footer .list-inline{
 	border-color: #66afe9;
 	outline: 0;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
-		rgba(102, 175, 233, .6);
+	rgba(102, 175, 233, .6);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px
-		rgba(102, 175, 233, .6);
+	rgba(102, 175, 233, .6);
 }
 
 .q-form-control::-moz-placeholder {
@@ -611,13 +606,6 @@ footer .list-inline{
 	cursor:pointer;
 }
 
-/* Style the tab */
-.q-tab{
-	overflow: hidden;
-	border: 1px solid #ccc;
-	background-color: #f1f1f1;
-}
-
 
 /* Style the buttons that are used to open the tab content */
 .q-tab button {
@@ -630,17 +618,7 @@ footer .list-inline{
 }
 
 
-/* Change background color of buttons on hover */
-.q-tab button:hover {
-	background-color: #ddd;
-}
 
-
-
-/* Create an active/current tablink class */
-.q-tab button.active {
-	background-color: #ccc;
-}
 
 
 
@@ -695,6 +673,7 @@ footer .list-inline{
 }
 .certified p{
 	color: #a39d9d;
+	margin-bottom: 0;
 }
 .certified img{
 	width: 75px;
@@ -751,9 +730,12 @@ form .form-control{
 .btn-primary:active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
 .show>.btn-primary.dropdown-toggle{
 	background: #8BB734;
 	border-color: #769E28;
+	outline: 0;
+	box-shadow: none;
 }
 .btn-primary.disabled,
 .btn-primary:disabled,
@@ -762,6 +744,15 @@ form .form-control{
 	background: #95c83d;
 	border-color: #95c83d;
 	opacity: 0.7;
+}
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn:not(:disabled):not(.disabled).active,
+.btn:not(:disabled):not(.disabled):active,
+.btn:not(:disabled):not(.disabled):active:focus{
+	outline: 0;
+	box-shadow: none;
 }
 .form-control:focus {
 	border-color: #66afe9;
@@ -852,6 +843,7 @@ form .form-control{
 }
 select.form-control{
 	background-position-x: left;
+	min-width: 50px;
 }
 
 element.style {
@@ -873,10 +865,15 @@ element.style {
 	border-right: 1px solid #c8c8c8;
 	padding-right: 15px;
 }
+.vehicle-info p + p:nth-child(2){
+	border-right-width: 0;
+	padding-right: 0;
+}
 .vehicle-info p label{
 	opacity: 0.6;
 	font-weight: 700;
 	display: inline-block;
+	margin-bottom: 0;
 }
 .well .panel-body{
 	background: #fafafa;
@@ -894,6 +891,8 @@ element.style {
 }
 .user-actions .dropdown-menu{
 	padding: 0;
+	left: 0 !important;
+	right: auto;
 }
 .user-actions .dropdown-menu > li > a{
 	padding: 0;
@@ -911,4 +910,383 @@ element.style {
 .user-actions .dropdown-menu .list a,
 .user-actions .dropdown-menu .list-link{
 	padding: 10px !important;
+}
+.container-fluid{
+	max-width: 1170px;
+}
+.box {
+	margin-top: 50px;
+}
+.static-orders .col-md-4 + .col-md-4{
+	margin-top: 15px;
+}
+footer .col-md-6{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.box,
+footer{
+	margin-top: 50px;
+}
+.certified{
+	text-align: center;
+}
+.register-bage{
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.register-bage form{
+	background: white;
+	border-radius: 20px;
+	padding: 15px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 8px -8px;
+}
+.register-bage form .btn {
+	float: none;
+}
+.register-bage form .title-box{
+	margin-bottom: 0;
+}
+.inner{
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100% - 214px);
+}
+.quotation-status{
+	background: white;
+	border-radius: 30px;
+	padding: 0 15px 15px;
+	overflow: hidden;
+}
+.quotation-status .tab-pane{
+	margin-top: 15px;
+}
+.quotation-status .panel{
+	margin-bottom: 0;
+}
+.quotation-status .panel + .panel{
+	margin-top: 15px;
+}
+.quotation-status .panel-heading{
+	padding: 0;
+	margin-top: -1px;
+}
+.quotation-status .panel-title a{
+	display: block;
+	position: relative;
+	padding: 10px 15px;
+	font-size: 15px;
+	padding-left: 40px;
+}
+.quotation-status .panel-title a:hover,
+.quotation-status .panel-title a:focus{
+	color: black;
+
+}
+.quotation-status .panel-title a .fa-chevron-down{
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	margin-top: -8px;
+	color: #a8a8a8;
+	transition: all 0.2s;
+}
+.quotation-status .panel-title a.collapsed{
+	margin-bottom: -1px;
+}
+.quotation-status .panel-title a.collapsed .fa-chevron-down{
+	transform: rotate(90deg);
+
+}
+.quotation-status .panel-title a p{
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+.quotation-status .panel-title a p span{
+	font-size: 13px;
+	padding: 5px;
+	margin-right: 10px;
+	position: relative;
+	font-weight: normal;
+	border-radius: 5px;
+}
+.quotation-status .panel-title a p span.under-review{
+	color: #0c5460;
+	background-color: #d1ecf1;
+	border: 1px solid #bee5eb;
+}
+.quotation-status .panel-title a p span.completed{
+	color: #155724;
+	background-color: #d4edda;
+	border: 1px solid #c3e6cb;
+}
+.quotation-status .panel-title a p span.transfer{
+	color: #856404;
+	background-color: #fff3cd;
+	border: 1px solid #ffeeba;
+}
+.quotation-status .panel-title a span{
+	float: left;
+	font-size: 14px;
+	color: #888;
+}
+.quotation-status .panel-title a .fa-calendar{
+	opacity: 0.7;
+}
+.quotation-status .panel-body{
+	padding-top: 0;
+	background: #fafafa;
+	padding-bottom: 0;
+	margin-top: 1px;
+}
+.quotation-status .vehicle-info{
+	padding-top: 10px;
+}
+.quotation-status .vehicle-info label{
+	font-size: 12px;
+	color: #7e7e7e;
+	margin-bottom: 0;
+}
+.quotation-status th{
+	font-size: 12px;
+	opacity: 0.4;
+}
+.no-data{
+	text-align: center;
+	margin: 30px auto;
+	font-size: 18px;
+	color: #a39d9d;
+}
+.quotation-summary{
+	background: white;
+	border-radius: 30px;
+	padding: 0 15px 15px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 8px -8px;
+	border: 1px solid #f1f1f1;
+}
+.quotation-summary li{
+	display: flex;
+	border-bottom: 1px solid #f1f1f1;
+	padding: 10px 5px;
+}
+.quotation-summary li p,
+.quotation-summary li label{
+	width: 50%;
+	margin-bottom: 0;
+}
+.quotation-summary li label{
+	font-size: 13px;
+	opacity: 0.6;
+	font-weight: normal;
+}
+.quotation-summary li p{
+	text-align: left;
+}
+.quotation-summary .btn{
+	width: 100%;
+}
+.comments{
+	border-top: 1px solid #ddd;
+	padding-top: 10px;
+	margin-top: 20px;
+}
+.comments li{
+		background: white;
+		border-radius: 20px;
+		padding: 15px;
+	border: 1px solid #f1f1f1;
+}
+.comments li + li{
+	margin-top: 15px;
+}
+.comments li p{
+	font-size: 14px;
+	margin-top: 7px;
+	color: #7e7e7e;
+	margin-bottom: 0;
+}
+.comments li span{
+	opacity: 0.5;
+	font-size: 13px;
+}
+.quotation-actions{
+	border-top: 2px solid #ededed;
+	padding-top: 10px;
+	margin: 20px -15px 0;
+	display: flex;
+	align-items: center;
+	background: white;
+	padding-bottom: 10px;
+}
+.quotation-actions a:hover,
+.quotation-actions .btn:hover{
+	color: #8BB734;
+}
+.quotation-actions .btn{
+	margin-right: 0;
+}
+.quotation-actions li + li{
+	border-right: 1px solid #ededed;
+}
+.vehicle-info .date{
+	display: none;
+}
+@media (min-width: 576px){
+	.col-sm-3 {
+		-ms-flex: unset;
+		flex: unset;
+		max-width: unset;
+	}
+	.step-box + .step-box{
+		margin-top: 30px;
+	}
+
+}
+
+@media (min-width: 768px){
+	.col-md-10 {
+		flex: unset;
+		max-width: unset;
+	}
+	.step-box + .step-box{
+		margin-top: 0;
+	}
+	.certified{
+		text-align: right;
+	}
+	footer .col-md-4 + .col-md-4,
+	.static-orders .col-md-4 + .col-md-4{
+		margin-top: 0;
+	}
+	.box,
+	footer {
+		margin-top: 70px;
+	}
+}
+@media (max-width: 767px){
+	.steps-list > div > p{
+		font-size: 12px;
+	}
+	.login ul a i{
+		margin-left: 5px;
+	}
+}
+@media (max-width: 570px){
+	.items-list li{
+		width: 33.333%;
+	}
+	.quotation-status{
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+	.quotation-status .nav > li > a{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.box.quotation-status{
+		margin-top: 25px;
+	}
+	.quotation-status .panel-title a span{
+		display: none;
+	}
+
+	.vehicle-info .date,
+	.vehicle-info p{
+		display: block;
+		margin-left: 0;
+	}
+	.vehicle-info .date{
+		margin-bottom: 10px;
+	}
+	.vehicle-info p + p {
+		padding: 5px 10px 5px 0;
+	}
+	.vehicle-info p + p:nth-child(2){
+		border-right-width: 1px;
+		padding-right: 15px;
+	}
+	.table-responsive{
+		border-radius: 15px;
+	}
+	.steps-list > div > p{
+		display: block;
+	}
+}
+.tooltip-wrapper {
+	padding-top: 10px;
+	display: inline-block;
+	position: relative;
+	-webkit-transform: translateZ(0); /* webkit flicker fix */
+	-webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+
+.tooltip-wrapper .tooltip {
+	width: 250px;
+	bottom: 100%;
+	display: block;
+	right: -20px;
+	margin-bottom: 15px;
+	opacity: 0;
+	padding: 5px;
+	pointer-events: none;
+	position: absolute;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	-ms-transform: translateY(10px);
+	-o-transform: translateY(10px);
+	transform: translateY(10px);
+	-webkit-transition: all .25s ease-out;
+	-moz-transition: all .25s ease-out;
+	-ms-transition: all .25s ease-out;
+	-o-transition: all .25s ease-out;
+	transition: all .25s ease-out;
+	-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	-o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+	border-radius: 10px;
+	background: rgba(0,0,0,0.7);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.tooltip-wrapper .tooltip:before {
+	bottom: -16px;
+	content: " ";
+	display: block;
+	height: 16px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+/* CSS Triangles - see Trevor's post */
+.tooltip-wrapper .tooltip:after {
+	border-left: solid transparent 8px;
+	border-right: solid transparent 8px;
+	border-top: solid 8px rgba(0,0,0,0.7);
+	bottom: -8px;
+	content: " ";
+	height: 0;
+	left: 50%;
+	margin-left: -13px;
+	position: absolute;
+	width: 0;
+}
+
+.tooltip-wrapper:hover .tooltip {
+	opacity: 1;
+	pointer-events: auto;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	-o-transform: translateY(0px);
+	transform: translateY(0px);
+}
+.tooltip-wrapper .tooltip img{
+	max-width: 100%;
+	border-radius: 10px;
 }

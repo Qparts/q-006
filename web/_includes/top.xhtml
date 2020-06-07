@@ -4,25 +4,24 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:b="http://bootsfaces.net/ui">
 	<header>
-		<div class="container headertop">
+		<div class="container-fluid headertop">
 			<div class="row">
-				<div class="col-md-4 col-sm-12">
-					<a href="/">
+				<div class="col-xs-4">
+					<a href="index">
 						<h:graphicImage value="/resources/images/jubail-logo.png"
-							rendered="true" styleClass="logo" />
+										rendered="true" styleClass="logo" />
 					</a>
 				</div>
-				<div class="col-md-8 col-sm-12 login">
-
+				<div class="col-xs-8 login">
 					<h:panelGroup rendered="#{not loginBean.logged}">
 						<ul class="list-inline">
 							<li>
 								<a href="#login-modal" data-toggle="modal">
-									<i class="fa fa-user-circle"/>#{lex.login} / #{lex.createNewAccount}
+									<i class="fa fa-user-circle"/>#{lex.login} <span class="hidden-xs">/ #{lex.createNewAccount}</span>
 								</a>
 								<b:modal id="login-modal" >
 									<b:tabView activeIndex="0">
-										<b:tab title="#{lex.login}" id="login-tab">
+										<b:tab title="#{lex.login}">
 											<h:form>
 												<b:messages />
 												<div class="form-group">
@@ -48,106 +47,8 @@
 
 											</h:form>
 										</b:tab>
-										<b:tab title="#{lex.createNewAccount}" id="register-tab">
-											<h:form >
-												<b:messages/>
-												<h:panelGroup rendered="#{registerBean.smsCode eq null}">
-													<b:row>
-														<b:column colSm="6">
-															<div class="form-group">
-																<label>#{lex.firstName} <span class="mandatory">*</span></label>
-																<h:inputText value="#{registerBean.registerModel.firstName}"
-																			 requiredMessage="#{lex.firstNameRequired}"
-																			 styleClass="form-control" required="true" />
-
-															</div>
-														</b:column>
-														<b:column colSm="6">
-															<div class="form-group">
-																<label>#{lex.lastName} <span class="mandatory">*</span></label>
-																<h:inputText value="#{registerBean.registerModel.lastName}"
-																			 required="true" requiredMessage="#{lex.lastNameRequired}"
-																			 styleClass="form-control"/>
-
-															</div>
-														</b:column>
-													</b:row>
-													<div class="form-group">
-														<label>#{lex.email} <span class="mandatory">*</span></label>
-														<h:inputText value="#{registerBean.registerModel.email}"
-																	 styleClass="form-control"
-																	 required="true" requiredMessage="#{lex.emailRequired}"
-																	 validatorMessage="#{lex.invalidEmail}">
-															<f:validateRegex
-																	pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
-														</h:inputText>
-
-													</div>
-													<div class="form-group">
-														<label>#{lex.country} <span class="mandatory">*</span></label>
-														<h:selectOneMenu value="#{registerBean.registerModel.countryId}" styleClass="form-control">
-															<f:selectItems value="#{countryBean.countries}" var="country" itemValue="#{country.id}" itemLabel="#{country.nameAr}"/>
-															<f:ajax execute="@this" update="mobile" />
-														</h:selectOneMenu>
-
-													</div>
-													<div class="form-group">
-														<label>#{lex.mobile} <span class="mandatory">*</span></label>
-														<h:inputText id="mobile"
-																	 required="true" requiredMessage="#{lex.mobileRequired}"
-																	 value="#{registerBean.registerModel.mobile}"
-																	 styleClass="form-control"
-																	 onchange="parseArabic(this)"
-																	 validatorMessage="#{lex.invalidMobile}">
-															<f:validateRegex pattern="#{(registerBean.registerModel.countryId ne null and registerBean.registerModel.countryId ne 0) ? countryBean.getCountryFromId(registerBean.registerModel.countryId).mobileRegex : countryBean.getCountryFromId(1).mobileRegex }" />
-														</h:inputText>
-
-													</div>
-													<b:row>
-														<b:column colSm="6">
-															<div class="form-group">
-																<label>#{lex.password} <span class="mandatory">*</span></label>
-																<h:inputSecret value="#{registerBean.registerModel.password}"
-																			   requiredMessage="#{lex.passwordRequired}" required="true"
-																			   styleClass="form-control" />
-
-															</div>
-														</b:column>
-														<b:column colSm="6">
-															<div class="form-group">
-																<label>#{lex.confirmPassword} <span class="mandatory">*</span></label>
-																<h:inputSecret
-																		value="#{registerBean.registerModel.confirmPassword}"
-																		required="true" requiredMessage="#{lex.passwordConfirmRequired}"
-																		styleClass="form-control"/>
-
-															</div>
-														</b:column>
-													</b:row>
-												</h:panelGroup>
-												<h:panelGroup rendered="#{registerBean.smsCode != null}">
-													<div class="form-group">
-														<label>#{lex.smsCode} <span class="mandatory">*</span></label>
-														<h:inputSecret value="#{registerBean.smsCodeUser}"
-																	   required="true" requiredMessage="#{lex.smsCodeRequired}"
-																	   styleClass="form-control" />
-
-													</div>
-												</h:panelGroup>
-												<h:panelGroup rendered="#{registerBean.smsCode eq null}">
-													<h:commandLink value="#{lex.requestSMS}"
-																   actionListener="#{registerBean.requestSMS()}"
-																   styleClass="btn btn-primary col-xs-12">
-														<f:ajax execute="@form" render="@form" />
-													</h:commandLink>
-												</h:panelGroup>
-												<h:panelGroup rendered="#{registerBean.smsCode != null}">
-														<h:commandLink value="#{lex.activate}"
-																	   actionListener="#{registerBean.signup()}"
-																	   styleClass="btn btn-primary col-xs-12">
-														</h:commandLink>
-												</h:panelGroup>
-											</h:form>
+										<b:tab title="#{lex.createNewAccount}">
+											<ui:include src="register-form.xhtml" />
 										</b:tab>
 									</b:tabView>
 

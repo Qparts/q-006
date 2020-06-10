@@ -3,12 +3,7 @@
 				xmlns:b="http://bootsfaces.net/ui"
 >
 
-	<div align="center" class="col-md-2 col-md-offset-5  col-xs-12">
-		<br/>
-		<b:messages/>
-		<br/>
-		<b:commandButton actionListener="#{cartBean.checkout()}" look="primary" value="#{lex.checkout}" update=":steps-panel @form"/>
-		<br/> <br/>
+	<div>
 		<b:commandButton value="#{lex.previous}" styleClass="btn" process="@this"
 						 rendered="false" actionListener="#{partssOrderBean.previous()}" update=":steps-panel"/>
 	</div>

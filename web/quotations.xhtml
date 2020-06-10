@@ -17,165 +17,166 @@
 		<section class="inner container-fluid">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="box quotation-status">
+					<div class="quotation-status">
 						<b:tabView activeIndex="0">
 							<b:tab title="طلبات منجزة">
 									<h:panelGroup rendered="#{quotationsBean.completedQuotations.isEmpty()}">
 										<p class="no-data">
 											<h:outputText value="لا توجد طلبات منجزة"/>
 										</p>
-
 									</h:panelGroup>
-									<ui:repeat var="quotation" value="#{quotationsBean.completedQuotations}">
-										<!--<h:panelGrid styleClass="#{status.index==0 ? 'myclass' : ''} "/>-->
-										<div class="panel panel-default">
-											<div class="panel-heading" role="tab" >
-												<h4 class="panel-title">
-													<a role="button" data-toggle="collapse" href="#c#{quotation.id}" aria-expanded="true" aria-controls="xx">
-														<p>#{lex.theOrder} #{quotation.id}</p>
-														<span>
+									<div class="panel-group" role="tablist" aria-multiselectable="true">
+										<ui:repeat var="quotation" value="#{quotationsBean.completedQuotations}" varStatus="status">
+											<h:panelGroup layout="block" styleClass="#{status.index==0 ? 'myclass ' : ''}panel panel-default">
+												<div class="panel-heading" role="tab" >
+													<h4 class="panel-title">
+														<a role="button" data-toggle="collapse" href="#c#{quotation.id}" aria-expanded="true" class="collapsed" >
+															<p>#{lex.theOrder} #{quotation.id}</p>
+															<span>
 																<i class="fa fa-calendar"></i>
 																<h:outputText value="#{quotation.created}">
 																	<f:convertDateTime pattern="dd-MM-yyyy" locale="en_US" />
 																</h:outputText>
 															</span>
-														<i class="fa fa-chevron-down"></i>
-													</a>
-												</h4>
-											</div>
-											<div id="c#{quotation.id}" class="panel-collapse collapse" role="tabpanel">
-												<div class="panel-body">
-													<div class="vehicle-info">
-														<p class="date">
-															<i class="fa fa-calendar"></i>
-															<h:outputText value="#{quotation.created}">
-																<f:convertDateTime pattern="dd-MM-yyyy" locale="en_US" />
-															</h:outputText>
-														</p>
-														<p><label>#{lex.make}</label>#{loginBean.loginObject.customer.getCustomerVehicleFromId(quotation.customerVehicleId).vehicle.fullName}</p>
-														<p><label>#{lex.vin}</label><h:outputText value="#{loginBean.loginObject.customer.getCustomerVehicleFromId(quotation.customerVehicleId).vin}" /></p>
-													</div>
-													<div class="row">
-														<div class="col-md-8">
-															<h:panelGroup name="for-submitted-only">
-																<div class="table-responsive">
-																	<table class="table table-hover">
-																		<thead>
-																		<tr>
-																			<th>#{lex.itemNameOrNum}</th>
-																			<th>الماركة</th>
-																			<th>#{lex.quantity}</th>
-																			<th>#{lex.unitPrice}</th>
-																			<th>#{lex.total}</th>
-																		</tr>
-																		</thead>
-																		<tbody>
-																		<ui:repeat var="item" value="#{quotation.quotationItems}">
+															<i class="fa fa-chevron-down"></i>
+														</a>
+													</h4>
+												</div>
+												<div id="c#{quotation.id}" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body">
+														<div class="vehicle-info">
+															<p class="date">
+																<i class="fa fa-calendar"></i>
+																<h:outputText value="#{quotation.created}">
+																	<f:convertDateTime pattern="dd-MM-yyyy" locale="en_US" />
+																</h:outputText>
+															</p>
+															<p><label>#{lex.make}</label>#{loginBean.loginObject.customer.getCustomerVehicleFromId(quotation.customerVehicleId).vehicle.fullName}</p>
+															<p><label>#{lex.vin}</label><h:outputText value="#{loginBean.loginObject.customer.getCustomerVehicleFromId(quotation.customerVehicleId).vin}" /></p>
+														</div>
+														<div class="row">
+															<div class="col-md-8">
+																<h:panelGroup name="for-submitted-only">
+																	<div class="table-responsive">
+																		<table class="table table-hover">
+																			<thead>
 																			<tr>
-																				<td>#{item.name}</td>
-																				<td>#{item.products.brand.nameAr}</td>
-																				<td>#{item.quantity}</td>
-																				<td><h:outputText value="#{item.products.salesPrice}">
-																					<f:convertNumber type="currency" currencySymbol="SR "
-																									 locale="en_US" />
-																				</h:outputText></td>
-																				<td><h:outputText
-																						value="#{item.products.salesPrice * item.quantity}">
-																					<f:convertNumber type="currency" currencySymbol="SR "
-																									 locale="en_US" />
-																				</h:outputText></td>
+																				<th>#{lex.itemNameOrNum}</th>
+																				<th>الماركة</th>
+																				<th>#{lex.quantity}</th>
+																				<th>#{lex.unitPrice}</th>
+																				<th>#{lex.total}</th>
 																			</tr>
-																		</ui:repeat>
-																		</tbody>
-																	</table>
-																</div>
-															</h:panelGroup>
+																			</thead>
+																			<tbody>
+																			<ui:repeat var="item" value="#{quotation.quotationItems}">
+																				<tr>
+																					<td>#{item.name}</td>
+																					<td>#{item.products.brand.nameAr}</td>
+																					<td>#{item.quantity}</td>
+																					<td><h:outputText value="#{item.products.salesPrice}">
+																						<f:convertNumber type="currency" currencySymbol="SR "
+																										 locale="en_US" />
+																					</h:outputText></td>
+																					<td><h:outputText
+																							value="#{item.products.salesPrice * item.quantity}">
+																						<f:convertNumber type="currency" currencySymbol="SR "
+																										 locale="en_US" />
+																					</h:outputText></td>
+																				</tr>
+																			</ui:repeat>
+																			</tbody>
+																		</table>
+																	</div>
+																</h:panelGroup>
+															</div>
+															<div class="col-md-4">
+																<h:panelGroup name="for-submitted-only" >
+																	<div class="quotation-summary">
+																		<ul class="list-unstyled">
+																			<li>
+																				<label>#{lex.totalParts}</label>
+																				<p>
+																					<h:outputText value="#{quotation.totalProducts}">
+																						<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
+																					</h:outputText>
+																				</p>
+																			</li>
+																			<li>
+																				<label>#{lex.deliveryFees}</label>
+																				<p>
+																					<h:outputText value="#{quotation.deliveryFees}">
+																						<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
+																					</h:outputText>
+																				</p>
+																			</li>
+																			<li>
+																				<label>#{lex.vat}</label>
+																				<p>
+																					<h:outputText value="#{quotation.totalVat}" >
+																						<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
+																					</h:outputText>
+																				</p>
+																			</li>
+																			<li>
+																				<label>#{lex.total}</label>
+																				<p>
+																					<h:outputText id="total-price" value="#{quotation.grandTotal}">
+																						<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
+																					</h:outputText>
+																				</p>
+																			</li>
+																		</ul>
+																		<h:outputLink value="add-to-cart?quotation=#{quotation.id}" class="btn btn-primary">
+																			<h:outputText value="#{lex.addProductsToCart}" />
+																		</h:outputLink>
+																	</div>
+																</h:panelGroup>
+															</div>
 														</div>
-														<div class="col-md-4">
-															<h:panelGroup name="for-submitted-only" >
-																<div class="quotation-summary">
-																	<ul class="list-unstyled">
-																		<li>
-																			<label>#{lex.totalParts}</label>
-																			<p>
-																				<h:outputText value="#{quotation.totalProducts}">
-																					<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
-																				</h:outputText>
-																			</p>
-																		</li>
-																		<li>
-																			<label>#{lex.deliveryFees}</label>
-																			<p>
-																				<h:outputText value="#{quotation.deliveryFees}">
-																					<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
-																				</h:outputText>
-																			</p>
-																		</li>
-																		<li>
-																			<label>#{lex.vat}</label>
-																			<p>
-																				<h:outputText value="#{quotation.totalVat}" >
-																					<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
-																				</h:outputText>
-																			</p>
-																		</li>
-																		<li>
-																			<label>#{lex.total}</label>
-																			<p>
-																				<h:outputText id="total-price" value="#{quotation.grandTotal}">
-																					<f:convertNumber type="currency" currencySymbol="SR " locale="en_US" />
-																				</h:outputText>
-																			</p>
-																		</li>
-																	</ul>
-																	<h:outputLink value="add-to-cart?quotation=#{quotation.id}" class="btn btn-primary">
-																		<h:outputText value="#{lex.addProductsToCart}" />
-																	</h:outputLink>
-																</div>
-															</h:panelGroup>
-														</div>
-													</div>
 
-													<h:panelGroup rendered="#{quotation.comments.size() gt 0}">
-														<div class="comments">
-															<h5>#{lex.reviews}</h5>
-															<ul class="list-unstyled">
-																<ui:repeat var="comment" value="#{quotation.comments}">
-																	<li>
+														<h:panelGroup rendered="#{quotation.comments.size() gt 0}">
+															<div class="comments">
+																<h5>#{lex.reviews}</h5>
+																<ul class="list-unstyled">
+																	<ui:repeat var="comment" value="#{quotation.comments}">
+																		<li>
 																			<span>
 																				<i class="fa fa-calendar"></i>
 																				<h:outputText value="#{comment.created}">
 																						<f:convertDateTime type="date" locale="en_US" />
 																					</h:outputText>
 																			</span>
-																		<p>
-																			<h:outputText value="#{comment.text}" />
-																		</p>
-																	</li>
-																</ui:repeat>
-															</ul>
-														</div>
-													</h:panelGroup>
-													<ul class="quotation-actions list-unstyled">
-														<li>
-															<h:outputLink
-																	value="#{quotationsBean.getWhatsappLink(quotation)}"
-																	class="btn">
-																<h:outputText value="استفسار" />
-															</h:outputLink>
-														</li>
-														<li>
-															<h:form>
-																<h:commandButton styleClass="btn"
-																				 value="إغلاق الطلب"
-																				 actionListener="#{quotationsBean.closeQuotation(quotation)}" />
-															</h:form>
-														</li>
-													</ul>
+																			<p>
+																				<h:outputText value="#{comment.text}" />
+																			</p>
+																		</li>
+																	</ui:repeat>
+																</ul>
+															</div>
+														</h:panelGroup>
+														<ul class="quotation-actions list-unstyled">
+															<li>
+																<h:outputLink
+																		value="#{quotationsBean.getWhatsappLink(quotation)}"
+																		class="btn">
+																	<h:outputText value="استفسار" />
+																</h:outputLink>
+															</li>
+															<li>
+																<h:form>
+																	<h:commandButton styleClass="btn"
+																					 value="إغلاق الطلب"
+																					 actionListener="#{quotationsBean.closeQuotation(quotation)}" />
+																</h:form>
+															</li>
+														</ul>
+													</div>
 												</div>
-											</div>
-										</div>
-									</ui:repeat>
+											</h:panelGroup>
+										</ui:repeat>
+									</div>
+
 							</b:tab>
 							<b:tab title="طلبات قيد الإنتظار">
 								<div>
@@ -583,8 +584,9 @@
 			</p:dialog>
 		</div>
 	</f:view>
+
 	<script>
-		$('.collapse').collapse()
+		$( ".myclass" ).find( ".collapse" ).addClass("show");
 	</script>
 </h:body>
 </html>

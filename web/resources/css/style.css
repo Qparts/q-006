@@ -846,8 +846,6 @@ select.form-control{
 	min-width: 50px;
 }
 
-element.style {
-}
 .vehicle-info {
 	margin-bottom: 10px;
 	border-bottom: 2px solid #ededed;
@@ -951,19 +949,21 @@ footer{
 .inner{
 	display: flex;
 	flex-direction: column;
-	min-height: calc(100% - 214px);
+	min-height: calc(100% - 244px);
+	padding-top: 30px;
 }
 .quotation-status{
 	background: white;
 	border-radius: 30px;
-	padding: 0 15px 15px;
-	overflow: hidden;
+	padding: 10px 15px 15px;
 }
 .quotation-status .tab-pane{
 	margin-top: 15px;
 }
 .quotation-status .panel{
 	margin-bottom: 0;
+	border-radius: 20px;
+	overflow: hidden;
 }
 .quotation-status .panel + .panel{
 	margin-top: 15px;
@@ -975,9 +975,8 @@ footer{
 .quotation-status .panel-title a{
 	display: block;
 	position: relative;
-	padding: 10px 15px;
+	padding: 15px 15px 15px 40px;
 	font-size: 15px;
-	padding-left: 40px;
 }
 .quotation-status .panel-title a:hover,
 .quotation-status .panel-title a:focus{
@@ -1035,6 +1034,7 @@ footer{
 }
 .quotation-status .panel-title a .fa-calendar{
 	opacity: 0.7;
+	margin-left: 5px;
 }
 .quotation-status .panel-body{
 	padding-top: 0;
@@ -1049,6 +1049,7 @@ footer{
 	font-size: 12px;
 	color: #7e7e7e;
 	margin-bottom: 0;
+	padding-left: 5px;
 }
 .quotation-status th{
 	font-size: 12px;
@@ -1060,7 +1061,8 @@ footer{
 	font-size: 18px;
 	color: #a39d9d;
 }
-.quotation-summary{
+.quotation-summary,
+.block-style{
 	background: white;
 	border-radius: 30px;
 	padding: 0 15px 15px;
@@ -1073,7 +1075,7 @@ footer{
 	padding: 10px 5px;
 }
 .quotation-summary li p,
-.quotation-summary li label{
+.quotation-summary li > label{
 	width: 50%;
 	margin-bottom: 0;
 }
@@ -1133,87 +1135,6 @@ footer{
 }
 .vehicle-info .date{
 	display: none;
-}
-@media (min-width: 576px){
-	.col-sm-3 {
-		-ms-flex: unset;
-		flex: unset;
-		max-width: unset;
-	}
-	.step-box + .step-box{
-		margin-top: 30px;
-	}
-
-}
-
-@media (min-width: 768px){
-	.col-md-10 {
-		flex: unset;
-		max-width: unset;
-	}
-	.step-box + .step-box{
-		margin-top: 0;
-	}
-	.certified{
-		text-align: right;
-	}
-	footer .col-md-4 + .col-md-4,
-	.static-orders .col-md-4 + .col-md-4{
-		margin-top: 0;
-	}
-	.box,
-	footer {
-		margin-top: 70px;
-	}
-}
-@media (max-width: 767px){
-	.steps-list > div > p{
-		font-size: 12px;
-	}
-	.login ul a i{
-		margin-left: 5px;
-	}
-}
-@media (max-width: 570px){
-	.items-list li{
-		width: 33.333%;
-	}
-	.quotation-status{
-		padding-left: 7px;
-		padding-right: 7px;
-	}
-	.quotation-status .nav > li > a{
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	.box.quotation-status{
-		margin-top: 25px;
-	}
-	.quotation-status .panel-title a span{
-		display: none;
-	}
-
-	.vehicle-info .date,
-	.vehicle-info p{
-		display: block;
-		margin-left: 0;
-	}
-	.vehicle-info .date{
-		margin-bottom: 10px;
-	}
-	.vehicle-info p + p {
-		padding: 5px 10px 5px 0;
-	}
-	.vehicle-info p + p:nth-child(2){
-		border-right-width: 1px;
-		padding-right: 15px;
-	}
-	.table-responsive{
-		border-radius: 15px;
-	}
-	.steps-list > div > p{
-		display: block;
-	}
 }
 .tooltip-wrapper {
 	padding-top: 10px;
@@ -1290,3 +1211,204 @@ footer{
 	max-width: 100%;
 	border-radius: 10px;
 }
+.order-checkout{
+	background: #fafafa;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding: 15px;
+	margin-bottom: -15px;
+	border: 1px solid #ddd;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+.quotation-status > h3{
+	margin: 0 -15px 0 -15px;
+	padding: 5px 15px 15px;
+	border-bottom: 1px solid #f1f1f1;
+
+}
+.address .form-actions{
+	margin-bottom: 10px;
+}
+.address-list{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-top: 15px;
+}
+.address-list > li{
+	width: 50%;
+	margin-bottom: 15px;
+}
+.address-list > li > a{
+	color: black;
+	padding: 20px;
+	border: 1px solid #e5e5e5;
+	display: block;
+	margin-left: 10px;
+	height: 100%;
+}
+.address-list > li:last-child > a{
+	border-color: #8BB734;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 8px -8px;
+	color: #8BB734;
+	cursor: pointer;
+}
+.address-list > li:last-child > a i{
+	margin-left: 5px;
+}
+.address-list > li:last-child > a:hover{
+	border-color: black;
+}
+.address-list > li > a:hover {
+	border-color: #8BB734;
+}
+.address-list > li > a > p:last-child{
+	margin-bottom: 0 ;
+}
+.address-list > li > a > label{
+	color: #8BB734;
+	cursor: pointer;
+}
+.block-style + .block-style{
+	margin-top: 20px;
+}
+.block-style:last-child{
+	margin-bottom: 20px;
+}
+.block-style h4{
+	font-size: 15px;
+	font-weight: bold;
+	color: #7e7e7e;
+	border-bottom: 1px solid #f1f1f1;
+	padding-bottom: 15px;
+	padding-top: 5px;
+}
+.block-style address{
+	margin-bottom: 0;
+}
+.quotation-summary li.promo{
+	background: #fcfcfc;
+	display: block;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.quotation-summary li.promo p{
+	display: inline-block;
+	text-align: right;
+	width: auto;
+}
+.quotation-summary li.promo input[type="checkbox"]{
+	margin-top: 0;
+	margin-left: 5px;
+}
+.promo-panel > .form-group{
+	padding-top: 20px;
+}
+.bf-message-detail {
+	padding-left: 0;
+	padding-right: 10px;
+}
+.confirm {
+	text-align: center;
+	padding: 20px 15px;
+}
+.confirm {
+	font-size: 47px;
+	margin-bottom: 20px;
+	color: #95c83d;
+}
+@media (min-width: 576px){
+	.col-sm-3 {
+		-ms-flex: unset;
+		flex: unset;
+		max-width: unset;
+	}
+	.step-box + .step-box{
+		margin-top: 30px;
+	}
+
+}
+
+@media (min-width: 768px){
+	.col-md-10 {
+		flex: unset;
+		max-width: unset;
+	}
+	.step-box + .step-box{
+		margin-top: 0;
+	}
+	.certified{
+		text-align: right;
+	}
+	footer .col-md-4 + .col-md-4,
+	.static-orders .col-md-4 + .col-md-4{
+		margin-top: 0;
+	}
+	.box,
+	footer {
+		margin-top: 70px;
+	}
+	.address-list > li{
+		width: 25%;
+	}
+}
+@media (max-width: 767px){
+	.steps-list > div > p{
+		font-size: 12px;
+	}
+	.login ul a i{
+		margin-left: 5px;
+	}
+	.address-list > li{
+		width: 100%;
+	}
+}
+@media (max-width: 570px){
+	.items-list li{
+		width: 33.333%;
+	}
+	.quotation-status{
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+	.quotation-status .nav > li > a{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.box.quotation-status{
+		margin-top: 25px;
+	}
+	.quotation-status .panel-title a span{
+		display: none;
+	}
+	.order-checkout{
+		margin-left: -7px;
+		margin-right: -7px;
+	}
+	.vehicle-info .date,
+	.vehicle-info p{
+		display: block;
+		margin-left: 0;
+	}
+	.vehicle-info .date{
+		margin-bottom: 10px;
+	}
+	.vehicle-info p + p {
+		padding: 5px 10px 5px 0;
+	}
+	.vehicle-info p + p:nth-child(2){
+		border-right-width: 1px;
+		padding-right: 15px;
+	}
+	.table-responsive{
+		border-radius: 15px;
+	}
+	.steps-list > div > p{
+		display: block;
+	}
+}
+

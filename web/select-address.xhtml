@@ -3,8 +3,6 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:o="http://omnifaces.org/ui">
 
 <h:head>
@@ -13,133 +11,67 @@
 <h:body>
 	<f:view>
 		<ui:include src="/_includes/top.xhtml" />
-		<section id="page">
-		<div class="container">
-			<div class="row3">
-				<div class="col-lg-12 col-xs-12" align="center">
-					<div class="paragraph-title">عنوان الشحن</div>
-				</div>
-
-
-				<o:form id="form-3" includeViewParams="true">
-					<div class="row">
-						<div class="col-xs-12">
-							<h:panelGroup rendered="#{loginBean.loginObject.customer.addresses.size() eq 0}">
-								<div class="col-md-4 col-md-offset-4 col-xs-12">
-									<div>لا توجد عناوين سابقة</div>
-								</div>
-								<br/>
-							</h:panelGroup>
-						</div>
-					</div>
-				</o:form>
-
-				<o:form id="form-2" includeViewParams="true">
-					<div class="row">
-						<div class="col-xs-12">
+		<section class="inner container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="quotation-status address">
+						<h3>عنوان الشحن</h3>
+						<o:form id="form-3" includeViewParams="true" rendered="#{loginBean.loginObject.customer.addresses.size() eq 0}">
+							<ui:include src="/_includes/address-form.xhtml" />
+						</o:form>
+						<o:form id="form-2" includeViewParams="true">
 							<h:panelGroup rendered="#{loginBean.loginObject.customer.addresses.size() gt 0}">
-								<div class="row">
-									<div class="col-md-8 col-md-offset-2 col-xs-12">
-										<div class="paragraph-title">عناوين سابقة</div>
-									</div>
-								</div>
-								<ui:repeat value="#{loginBean.loginObject.customer.addresses}" var="address">
-									<div class="row">
-										<div class="col-md-4 col-md-offset-2 col-xs-8">
-											<h:outputText value="#{address.line1} ,"/>
-											<h:outputText value="#{address.line2} ,"/>
-											<h:outputText value="#{countryBean.getRegionFromId(countryBean.getCityFromId(address.cityId).regionId).nameAr} -  "/>
-											<h:outputText value="#{countryBean.getCityFromId(address.cityId).nameAr}"/>
-										</div>
-										<div class="col-xs-4">
-											<h:commandButton styleClass="btn btn-primary hvr-push"
-															 value="اختر العنوان" actionListener="#{selectAddressBean.selectAddress(address)}">
-											</h:commandButton>
-										</div>
-									</div>
-									<br/>
-									<br/>
-								</ui:repeat>
-								<br/>
-							</h:panelGroup>
-						</div>
-					</div>
-				</o:form>
+								<ul class="list-unstyled address-list">
+									<ui:repeat value="#{loginBean.loginObject.customer.addresses}" var="address">
+										<li>
+											<h:commandLink actionListener="#{selectAddressBean.selectAddress(address)}">
+												<p>
+													<h:outputText value="#{address.line1} ,"/>
+													<h:outputText value="#{address.line2} "/>
+												</p>
+												<p>
+													<h:outputText value="#{countryBean.getRegionFromId(countryBean.getCityFromId(address.cityId).regionId).nameAr} -  "/>
+													<h:outputText value="#{countryBean.getCityFromId(address.cityId).nameAr}"/>
+												</p>
+												<label>اختر العنوان</label>
+											</h:commandLink>
 
-				<o:form id="form-4" includeViewParams="true">
-					<div class="row">
-						<div class="col-xs-12">
-							<h:panelGroup >
-								<div class="col-md-8 col-md-offset-2 col-xs-12">
-									<div class="paragraph-title">
-									<h:selectBooleanCheckbox value="#{selectAddressBean.newAddress}">
-										<f:ajax execute="@this" render=":form-1"/>
-									</h:selectBooleanCheckbox>إضافة عنوان جديد</div>
-								</div>
-								<br/>
-							</h:panelGroup>
-						</div>
-					</div>
-				</o:form>
 
-				<div id="add-to-cart-table">
-					<o:form id="form-1" includeViewParams="true">
-						<h:panelGroup rendered="#{selectAddressBean.newAddress}">
-						<div class="row">
-								<div class="col-md-8 col-md-offset-2 col-xs-12">
-									<h:outputText value="#{lex.address}" style="font-size: 12px; color: #bbbbbb" />
-								</div>
-								<div class="col-md-4 col-md-offset-2 col-xs-12">
-									<h:inputText styleClass="form-control" id="address1" value="#{selectAddressBean.address.line1}"/>
-								</div>
-								<div class="col-md-8 col-md-offset-2 col-xs-12">
-									<h:outputText value="#{lex.address2}" style="font-size: 12px; color: #aaaaaa" />
-								</div>
-								<div class="col-md-4 col-md-offset-2 col-xs-12">
-									<h:inputText id="address2" styleClass="form-control" value="#{selectAddressBean.address.line2}"/>
-								</div>
-								<div class="col-md-8 col-md-offset-2 col-xs-12">
-									<h:outputText value="#{lex.region}" style="font-size: 12px; color: #aaaaaa" />
-								</div>
-								<div class="col-md-4 col-md-offset-2 col-xs-12">
-									<h:selectOneMenu id="region" styleClass="form-control"
-													 value="#{selectAddressBean.selectedRegionId}" required="true">
-										<f:selectItem noSelectionOption="true" itemLabel="#{lex.selectRegion}" />
-										<f:selectItems
-												value="#{selectAddressBean.customerCountry.regions}" var="region"
-												itemValue="#{region.id}" itemLabel="#{region.nameAr}" />
-										<f:ajax listener="#{selectAddressBean.chooseRegion()}"
-												execute="@this" render="city-panel" />
-									</h:selectOneMenu>
-								</div>
-								<h:panelGroup id="city-panel">
-									<h:panelGroup rendered="#{selectAddressBean.selectedRegionId gt 0}">
-										<div class="col-md-8 col-md-offset-2 col-xs-12">
-											<h:outputText value="#{lex.city}" style="font-size: 12px; color: #aaaaaa" />
-										</div>
-										<div class="col-md-4 col-md-offset-2 col-xs-12">
-											<h:selectOneMenu id="city" styleClass="form-control" value="#{selectAddressBean.address.cityId}" required="true">
-												<f:selectItems value="#{selectAddressBean.selectedRegion.cities}" var="city" itemValue="#{city.id}" itemLabel="#{city.nameAr}" />
-												<f:ajax />
-											</h:selectOneMenu>
-										</div>
-									</h:panelGroup>
-								</h:panelGroup>
-								<div class="col-md-8 col-md-offset-2 col-xs-12">
-									<br/>
-									<h:commandButton styleClass="btn btn-primary hvr-push"
-									value="إنشاء عنوان" actionListener="#{selectAddressBean.createAddress()}"/>
+										</li>
+									</ui:repeat>
+									<li>
+										<!-- Button trigger modal -->
+										<a data-toggle="modal" data-target="#addAddress">
+											<i class="fa fa-plus-circle"></i>
+											إضافة عنوان جديد
+										</a>
+
+
+
+									</li>
+								</ul>
+							</h:panelGroup>
+						</o:form>
+						<!-- Modal -->
+						<div class="modal fade" id="addAddress" tabindex="-1" role="dialog" >
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title">أضف عنوان جديد</h4>
+									</div>
+									<div class="modal-body">
+										<ui:include src="/_includes/address-form.xhtml" />
+									</div>
+
 								</div>
 							</div>
-						</h:panelGroup>
-					</o:form>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 		</section>
-
-
-		<footer>
+				<footer>
 			<ui:include src="/_includes/footer.xhtml" />
 		</footer>
 	</f:view>

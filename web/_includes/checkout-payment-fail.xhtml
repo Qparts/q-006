@@ -4,11 +4,10 @@
 				xmlns:b="http://bootsfaces.net/ui">
 
 	<div class="row">
-		<div align="center" class="col-md-6 col-md-offset-3 col-xs-12 ">
+		<div align="center" class="col-xs-12 ">
 			<h:outputText
 					value="لم تتم عملية الدفع بنجاح, الرجاء المحاولة مرة اخرى"
-					rendered="#{cartBean.paymentFailed}" styleClass="q-bold"
-					style="color:red;"/>
+					rendered="#{cartBean.paymentFailed}" />
 			<b:messages id="msgs"/>
 		</div>
 	</div>

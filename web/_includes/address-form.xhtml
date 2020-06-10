@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:o="http://omnifaces.org/ui">
+
+    <o:form includeViewParams="true">
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>#{lex.address}</label>
+                <h:inputText styleClass="form-control" id="address1" value="#{selectAddressBean.address.line1}"/>
+            </div>
+            <div class="col-md-6 form-group">
+                <label>#{lex.address2}</label>
+                <h:inputText id="address2" styleClass="form-control" value="#{selectAddressBean.address.line2}"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>#{lex.region}</label>
+                <h:selectOneMenu id="region" styleClass="form-control"
+                                 value="#{selectAddressBean.selectedRegionId}" required="true">
+                    <f:selectItem noSelectionOption="true" itemLabel="#{lex.selectRegion}" />
+                    <f:selectItems
+                            value="#{selectAddressBean.customerCountry.regions}" var="region"
+                            itemValue="#{region.id}" itemLabel="#{region.nameAr}" />
+                    <f:ajax listener="#{selectAddressBean.chooseRegion()}"
+                            execute="@this" render="city-panel" />
+                </h:selectOneMenu>
+            </div>
+            <div class="col-md-6 form-group">
+                <h:panelGroup id="city-panel">
+                    <h:panelGroup rendered="#{selectAddressBean.selectedRegionId gt 0}">
+                        <label>#{lex.city}</label>
+                        <h:selectOneMenu id="city" styleClass="form-control" value="#{selectAddressBean.address.cityId}" required="true">
+                            <f:selectItems value="#{selectAddressBean.selectedRegion.cities}" var="city" itemValue="#{city.id}" itemLabel="#{city.nameAr}" />
+                            <f:ajax />
+                        </h:selectOneMenu>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </div>
+        </div>
+        <div class="form-actions">
+            <h:commandButton styleClass="btn btn-primary"  value="إنشاء عنوان" actionListener="#{selectAddressBean.createAddress()}"/>
+        </div>
+    </o:form>
+</ui:composition>

@@ -1,100 +1,103 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:f="http://java.sun.com/jsf/core">
-        <h:panelGroup id="price-panel" layout="block" styleClass="row">
-            <div class="col-lg-12 col-xs-12" align="center">
-                <div class="paragraph-title">إتمام الشراء</div>
-            </div>
-            <div align="center" class="col-xs-12">
-                <div class="col-lg-3 col-lg-offset-3 col-xs-6 table-bordered">
-                    <p style="font-size: 12px; color: #aaaaaa">#{lex.totalParts}</p>
-                    <p>
-                        <h:outputText value="#{cartBean.cartRequest.totalProducts}"
-                                      style="font-weight: 600;color: #888;">
-                            <f:convertNumber type="currency" currencySymbol="SR " locale="en_US"/>
-                        </h:outputText>
-                    </p>
-                </div>
-                <div class="col-md-3 col-xs-6 table-bordered">
-                    <p style="font-size: 12px; color: #aaaaaa">#{lex.deliveryFees}</p>
-                    <p>
-                        <h:outputText value="#{cartBean.cartRequest.deliveryCharges}"
-                                      style="font-weight: 600;color: #888" id="del-fees">
-                            <f:convertNumber type="currency" currencySymbol="SR "
-                                             locale="en_US"/>
-                        </h:outputText>
-                    </p>
-                </div>
-                <div class="col-md-6 col-md-offset-3 col-xs-12 table-bordered">
-                    <h:panelGroup id="promo-price">
-                        <h:panelGroup layout="block" style="padding-bottom: 10px;">
-                            <h:outputText value="الإجمالي قبل الخصم و الضريبة"
-                                          style="font-size: 12px; color: #aaaaaa;font-weight: 900;"/>
-                            <br/>
-                            <h:outputText id="total-price" style="color:#aaa;"
-                                          value="#{cartBean.cartRequest.subTotal}">
-                                <f:convertNumber type="currency" currencySymbol="SR "
-                                                 locale="en_US"/>
-                            </h:outputText>
-                        </h:panelGroup>
-                        <h:panelGroup layout="block" style="padding-bottom: 10px;">
-                            <h:outputText value="الخصم" style="font-size: 12px; color: #aaa;font-weight: 900;"/>
-                            <br/>
-                            <h:outputText value="#{cartBean.cartRequest.totalDiscount}" style="color:#cc4f1d">
-                                <f:convertNumber currencySymbol="SR " type="currency" locale="en_US"/>
-                            </h:outputText>
-                        </h:panelGroup>
-                        <h:panelGroup layout="block" style="padding-bottom: 10px;">
-                            <h:outputText value="مجموع الضريبة" style="font-size: 12px; color: #aaa;font-weight: 900;"/>
-                            <br/>
-                            <h:outputText id="total-vat" value="#{cartBean.cartRequest.totalVatAfterDiscount}"
-                                          style="color:#aaa;">
-                                <f:convertNumber type="currency" currencySymbol="SR " locale="en_US"/>
-                            </h:outputText>
-                        </h:panelGroup>
-                        <h:panelGroup layout="block" style="padding-bottom: 10px;">
-                            <h:outputText value="الإجمالي" style="font-size: 12px; color: #aaa;font-weight: 900;"/>
-                            <p style="font-size: 20px;">
-                                <h:outputText style="color: #cc4f1d; font-weight: 600;"
-                                              id="total-price-promo"
-                                              value="#{cartBean.cartRequest.grandTotalAfterDiscount}">
-                                    <f:convertNumber type="currency" currencySymbol="SR "
-                                                     locale="en_US"/>
-                                </h:outputText>
-                            </p>
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui">
+    <div class="quotation-summary">
+        <ul class="list-unstyled">
+            <li>
+                <label>
+                    #{lex.totalParts}
+                </label>
+                <p>
+                    <h:outputText value="#{cartBean.cartRequest.totalProducts}">
+                        <f:convertNumber type="currency" currencySymbol="SR " locale="en_US"/>
+                    </h:outputText>
+                </p>
+            </li>
+            <li>
+                <label>
+                    #{lex.deliveryFees}
+                </label>
+                <p>
+                    <h:outputText value="#{cartBean.cartRequest.deliveryCharges}">
+                        <f:convertNumber type="currency" currencySymbol="SR "
+                                         locale="en_US"/>
+                    </h:outputText>
+                </p>
+            </li>
+            <li>
+                <label>
+                    الإجمالي قبل الخصم و الضريبة
+                </label>
+                <p>
+                    <h:outputText id="total-price"
+                                  value="#{cartBean.cartRequest.subTotal}">
+                        <f:convertNumber type="currency" currencySymbol="SR "
+                                         locale="en_US"/>
+                    </h:outputText>
+                </p>
+            </li>
+            <li>
+                <label>
+                    الخصم
+                </label>
+                <p>
+                    <h:outputText value="#{cartBean.cartRequest.totalDiscount}">
+                        <f:convertNumber currencySymbol="SR " type="currency" locale="en_US"/>
+                    </h:outputText>
+                </p>
+            </li>
+            <li>
+                <label>
+                    مجموع الضريبة
+                </label>
+                <p>
+                    <h:outputText id="total-vat" value="#{cartBean.cartRequest.totalVatAfterDiscount}" >
+                        <f:convertNumber type="currency" currencySymbol="SR " locale="en_US"/>
+                    </h:outputText>
+                </p>
+            </li>
+            <li>
+                <label>
+                    الإجمالي
+                </label>
+                <p>
+                    <h:outputText  id="total-price-promo" value="#{cartBean.cartRequest.grandTotalAfterDiscount}">
+                        <f:convertNumber type="currency" currencySymbol="SR" locale="en_US"/>
+                    </h:outputText>
+
+                </p>
+            </li>
+            <li class="promo">
+                    <h:panelGroup id="promo-question" layout="block">
+                        <h:panelGroup rendered="#{not cartBean.promoVerified}">
+                            <h:selectBooleanCheckbox value="#{cartBean.havePromo}">
+                                <f:ajax execute="@this" render="promo-panel"/>
+                            </h:selectBooleanCheckbox>
+                            <p>#{lex.promCodeQuestion}</p>
                         </h:panelGroup>
                     </h:panelGroup>
-                    <br/> <br/>
-
-
-                    <div>
-                        <h:panelGroup id="promo-question">
-                            <h:panelGroup rendered="#{not cartBean.promoVerified}">
-                                <p>#{lex.promCodeQuestion}</p>
-                                <h:selectBooleanCheckbox value="#{cartBean.havePromo}" style="height:20px">
-                                    <f:ajax execute="@this" render="promo-panel"/>
-                                </h:selectBooleanCheckbox>
-                            </h:panelGroup>
-                        </h:panelGroup>
-                        <h:panelGroup id="promo-panel">
-                            <h:panelGroup rendered="#{cartBean.havePromo and not cartBean.promoVerified}">
-                                <p>#{lex.promCodeEnter}</p>
+                    <h:panelGroup id="promo-panel" layout="block" styleClass="promo-panel">
+                        <h:panelGroup rendered="#{cartBean.havePromo and not cartBean.promoVerified}">
+                            <div class="form-group">
+                                <label>#{lex.promCodeEnter}</label>
                                 <h:inputText id="in" value="#{cartBean.promoCodeQuery}"
-                                             styleClass="form-control" style="width:100px"
+                                             styleClass="form-control"
                                              disabled="#{cartBean.promoVerified}"/>
-                                <br/>
-                                <h:commandLink
-                                        actionListener="#{cartBean.verifyPromoCode()}"
-                                        value="#{lex.promCodeVerify}"
-                                        rendered="#{not cartBean.promoVerified}">
-                                    <f:ajax execute="in @this" render="price-panel products-table-panel msgs"/>
-                                </h:commandLink>
-                                <br/>
-                            </h:panelGroup>
+                            </div>
+                            <h:commandLink
+                                    actionListener="#{cartBean.verifyPromoCode()}"
+                                    value="#{lex.promCodeVerify}"
+                                    rendered="#{not cartBean.promoVerified}">
+                                <f:ajax execute="in @this" render="price-panel products-table-panel msgs"/>
+                            </h:commandLink>
+                            <br/>
                         </h:panelGroup>
-                    </div>
-                </div>
-            </div>
-        </h:panelGroup>
+                    </h:panelGroup>
+            </li>
+        </ul>
+        <b:commandButton actionListener="#{cartBean.checkout()}" look="primary" value="#{lex.checkout}" update=":steps-panel @form"/>
+    </div>
+
 </ui:composition>

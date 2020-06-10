@@ -6,11 +6,17 @@
 
     <h:panelGroup rendered="#{cartBean.stage eq 3}">
         <o:form id="form-3" includeViewParams="true">
-			<ui:include src="checkout-payment-fail.xhtml"/>
-			<ui:include src="checkout-products-table.xhtml"/>
-            <ui:include src="checkout-price-panel.xhtml"/>
-			<ui:include src="checkout-address-line.xhtml"/>
-	<!--		<ui:include src="checkout-payment-panel.xhtml"/>-->
+            <ui:include src="checkout-payment-fail.xhtml"/>
+            <div class="row">
+                <div class="col-md-8">
+                    <ui:include src="checkout-products-table.xhtml"/>
+                    <ui:include src="checkout-address-line.xhtml"/>
+                </div>
+                <div class="col-md-4">
+                    <ui:include src="checkout-price-panel.xhtml"/>
+                </div>
+            </div>
+	        <!--<ui:include src="checkout-payment-panel.xhtml"/>-->
 			<ui:include src="checkout-submit-button.xhtml"/>
         </o:form>
     </h:panelGroup>

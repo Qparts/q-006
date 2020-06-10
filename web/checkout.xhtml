@@ -13,15 +13,25 @@
 	<f:view>
 		<ui:include src="/_includes/top.xhtml" />
 		<h:outputText value="#{cartBean.checkStage()}"/>
-		<section id="page">
-			<div class="container">
-				<h:panelGroup layout="block" id="steps-panel">
-					<ui:include src="_includes/checkout-stage-3.xhtml"/>
-					<ui:include src="_includes/checkout-stage-4.xhtml"/>
-					<ui:include src="_includes/checkout-stage-5.xhtml"/>
-				</h:panelGroup>
+		<section class="inner container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="quotation-status">
+						<h3>
+							إتمام الشراء
+						</h3>
+						<div class="order-checkout">
+							<h:panelGroup layout="block" id="steps-panel">
+								<ui:include src="_includes/checkout-stage-3.xhtml"/>
+								<ui:include src="_includes/checkout-stage-4.xhtml"/>
+								<ui:include src="_includes/checkout-stage-5.xhtml"/>
+							</h:panelGroup>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
+
 		<footer>
 			<ui:include src="/_includes/footer.xhtml" />
 		</footer>

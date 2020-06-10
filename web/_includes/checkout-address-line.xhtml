@@ -1,18 +1,14 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 				xmlns:h="http://java.sun.com/jsf/html"
 				xmlns:ui="http://java.sun.com/jsf/facelets">
-
-	<div class="row">
-		<div class="col-xs-12" align="center">
-			<div class="paragraph-title">#{lex.address}</div>
-		</div>
-		<div class="col-md-4 col-md-offset-4 col-xs-12">
+	<div class="block-style">
+		<h4>#{lex.address}</h4>
+		<address>
 			<h:outputText value="#{cartBean.cartRequest.address.line1} ,"/>
 			<h:outputText value="#{cartBean.cartRequest.address.line2} ,"/>
 			<h:outputText value="#{countryBean.getRegionFromId(countryBean.getCityFromId(cartBean.cartRequest.address.cityId).regionId).nameAr} -  "/>
 			<h:outputText value="#{countryBean.getCityFromId(cartBean.cartRequest.address.cityId).nameAr}"/>
-		</div>
-		<br/>
-		<br/>
+		</address>
 	</div>
+
 </ui:composition>
